@@ -1,33 +1,32 @@
 import React from 'react';
-import Image from 'next/image';
-import { Phone, MapPin, Mail, Clock, ShieldCheck, Heart } from 'lucide-react';
+import { Phone, MapPin, Clock, ShieldCheck } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#072B34] text-white pt-16 pb-24 md:pb-16 border-t border-teal-900">
+    <footer className="bg-[#072B34] text-white pt-12 sm:pt-16 pb-28 md:pb-16 border-t border-teal-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-teal-800/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10 sm:pb-12 border-b border-teal-800/60">
           
           {/* Brand & Mission (Col 1-5) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="relative w-44 h-12 flex items-center bg-white/10 p-2 rounded-xl backdrop-blur-xs">
-              <Image
-                src="/storage/company/logos/6UyZyveDaep3fF5vqhLpkZEJfhvqKRWtnmMXx35N.png"
-                alt="Dr. Rahul's Relief Physiotherapy"
-                width={170}
-                height={48}
-                className="object-contain brightness-0 invert"
-              />
+            {/* Typographic Brand Identity (Logo Image Removed) */}
+            <div className="flex flex-col">
+              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-400">
+                Dr. Rahul&apos;s
+              </span>
+              <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-none mt-1">
+                Relief Physiotherapy
+              </span>
             </div>
 
-            <p className="text-sm text-teal-100 leading-relaxed max-w-sm">
-              Dr. Rahul's Relief Physiotherapy is dedicated to evidence-based, non-surgical pain management for spine, knee, and neck conditions through personalized root-cause rehabilitation.
+            <p className="text-xs sm:text-sm text-teal-100 leading-relaxed max-w-sm">
+              Dr. Rahul&apos;s Relief Physiotherapy is dedicated to evidence-based, non-surgical pain management for spine, knee, and neck conditions through personalized root-cause rehabilitation.
             </p>
 
-            <div className="flex items-center gap-3 text-xs text-teal-200">
+            <div className="flex items-center gap-3 text-xs text-teal-200 pt-1">
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" /> Certified Manual Therapy
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" /> Certified Manual Therapy
               </span>
               <span>•</span>
               <span>10,000+ Treated</span>
@@ -36,7 +35,7 @@ export default function Footer() {
 
           {/* Quick Links (Col 6-8) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
               Treatment Areas
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-teal-200">
@@ -50,7 +49,7 @@ export default function Footer() {
 
           {/* Clinic Timings & Location (Col 9-12) */}
           <div className="lg:col-span-4 space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
               Clinic & Appointments
             </h4>
 
@@ -82,9 +81,9 @@ export default function Footer() {
         </div>
 
         {/* Disclaimer & Copyright */}
-        <div className="pt-8 text-center sm:flex sm:justify-between sm:text-left text-xs text-teal-400 space-y-3 sm:space-y-0">
+        <div className="pt-6 sm:pt-8 text-center sm:flex sm:justify-between sm:text-left text-xs text-teal-400 space-y-3 sm:space-y-0">
           <p>
-            © {new Date().getFullYear()} Dr. Rahul's Relief Physiotherapy. All rights reserved.
+            © {new Date().getFullYear()} Dr. Rahul&apos;s Relief Physiotherapy. All rights reserved.
           </p>
           <p className="text-[11px] text-teal-300 max-w-xl">
             Medical Disclaimer: Individual outcomes may vary depending on patient compliance and diagnostic severity. Consult our specialist for personalized medical guidance.

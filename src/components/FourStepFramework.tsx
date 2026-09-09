@@ -70,58 +70,58 @@ export default function FourStepFramework() {
   ];
 
   return (
-    <section id="framework" className="py-16 md:py-24 bg-[#F8FAFC] relative">
+    <section id="framework" className="py-12 sm:py-16 md:py-24 bg-[#F8FAFC] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <span className="badge-soft-teal mb-3">
             Proprietary Treatment Protocol
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-            Dr. Rahul's <span className="text-[#0B4351]">4-Step Personalised</span> Treatment Approach
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+            Dr. Rahul&apos;s <span className="text-[#0B4351]">4-Step Personalised</span> Treatment Approach
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            "Hum aapko koi generic exercise sheet dekar nahi chhodte. Har patient ke pain ka underlying trigger samajhkar yeh 4-step framework follow kiya jata hai."
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed">
+            &ldquo;Hum aapko koi generic exercise sheet dekar nahi chhodte. Har patient ke pain ka underlying trigger samajhkar yeh 4-step framework follow kiya jata hai.&rdquo;
           </p>
         </div>
 
         {/* 4 Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
               <div
                 key={idx}
-                className={`relative bg-white rounded-3xl p-7 sm:p-9 border-2 ${step.highlightColor} shadow-md hover:shadow-xl transition-all flex flex-col justify-between`}
+                className={`relative bg-white rounded-3xl p-5 sm:p-7 md:p-8 border-2 ${step.highlightColor} shadow-md hover:shadow-xl transition-all flex flex-col justify-between h-full`}
               >
                 <div>
                   {/* Step Header */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <span className={`text-sm font-extrabold px-3 py-1 rounded-full ${step.accentBadgeColor}`}>
+                  <div className="flex items-center justify-between mb-5 sm:mb-6">
+                    <div className="flex items-center gap-2.5">
+                      <span className={`text-xs sm:text-sm font-extrabold px-3 py-1 rounded-full ${step.accentBadgeColor}`}>
                         Step {step.number}
                       </span>
-                      <span className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                      <span className="text-[11px] sm:text-xs font-semibold text-slate-700 uppercase tracking-wider">
                         {step.badge}
                       </span>
                     </div>
 
-                    <div className="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#0B4351]">
-                      <Icon className="w-6 h-6 text-[#0D9488]" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#0B4351] shrink-0">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#0D9488]" />
                     </div>
                   </div>
 
                   {/* Title & Hindi Headline */}
-                  <h3 className="text-2xl font-extrabold text-slate-900 mb-1">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-sm font-semibold text-[#0B4351] mb-4">
+                  <p className="text-xs sm:text-sm font-semibold text-[#0B4351] mb-3 sm:mb-4">
                     {step.hindiHeadline}
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">
                     {step.description}
                   </p>
 
@@ -138,7 +138,7 @@ export default function FourStepFramework() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-700">
+                <div className="mt-6 sm:mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
                   <span>Part of your 1-on-1 personalized plan</span>
                   <span className="font-bold text-[#0B4351]">Evidence-Based</span>
                 </div>
@@ -148,16 +148,16 @@ export default function FourStepFramework() {
         </div>
 
         {/* CTA Bar below steps */}
-        <div className="mt-14 text-center max-w-xl mx-auto">
-          <p className="text-slate-700 font-semibold mb-4 text-base">
+        <div className="mt-10 sm:mt-14 text-center max-w-xl mx-auto px-2">
+          <p className="text-slate-700 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
             Apne spine, knee ya neck pain ka permanent root-cause diagnosis chahte hain?
           </p>
           <a
             href="#consultation"
-            className="btn-accent px-8 py-4 rounded-full text-base sm:text-lg font-bold inline-flex items-center gap-2 group"
+            className="btn-accent px-6 py-3.5 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base font-bold inline-flex items-center gap-2 group"
           >
             <span>Book Your Root-Cause Assessment</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform shrink-0" />
           </a>
         </div>
 

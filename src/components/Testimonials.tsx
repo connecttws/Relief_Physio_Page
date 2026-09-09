@@ -30,52 +30,52 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white border-t border-slate-200">
+    <section className="py-12 sm:py-16 md:py-24 bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <span className="badge-soft-teal mb-3">Real Patient Results</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
             10,000+ Log <span className="text-[#0B4351]">Dard Se Azaad Ho Chuke Hain</span>
           </h2>
-          <p className="mt-3 text-base text-slate-600">
-            Read how patients stopped recurring pain and avoided unnecessary surgery through Dr. Rahul's personalized approach.
+          <p className="mt-3 text-sm sm:text-base text-slate-600">
+            Read how patients stopped recurring pain and avoided unnecessary surgery through Dr. Rahul&apos;s personalized approach.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-8">
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="bg-[#FAFBFD] rounded-3xl p-7 border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
+              className="bg-[#FAFBFD] rounded-3xl p-5 sm:p-7 border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between h-full"
             >
               <div>
                 {/* Rating Stars & Quote */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-1 text-amber-500">
                     {[...Array(rev.stars)].map((_, sIdx) => (
-                      <Star key={sIdx} className="w-4 h-4 fill-amber-400" />
+                      <Star key={sIdx} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400" />
                     ))}
                   </div>
-                  <Quote className="w-8 h-8 text-teal-200" />
+                  <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-teal-200" />
                 </div>
 
                 <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold bg-teal-50 text-[#0B4351] border border-teal-200 mb-3">
                   {rev.condition}
                 </span>
 
-                <p className="text-sm text-slate-700 leading-relaxed italic mb-6">
-                  "{rev.feedback}"
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic mb-6">
+                  &ldquo;{rev.feedback}&rdquo;
                 </p>
               </div>
 
               <div className="pt-4 border-t border-slate-200/80">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-2">
                   <div>
-                    <h4 className="font-bold text-slate-900 text-sm">{rev.name}</h4>
-                    <p className="text-xs text-slate-700">{rev.age}</p>
+                    <h4 className="font-bold text-slate-900 text-xs sm:text-sm">{rev.name}</h4>
+                    <p className="text-[11px] sm:text-xs text-slate-600">{rev.age}</p>
                   </div>
-                  <div className="flex items-center gap-1 text-xs font-bold text-emerald-700">
+                  <div className="flex items-center gap-1 text-xs font-bold text-emerald-700 shrink-0">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>{rev.reliefDays}</span>
                   </div>

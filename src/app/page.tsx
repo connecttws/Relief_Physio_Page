@@ -14,7 +14,7 @@ import StickyMobileBar from '@/components/StickyMobileBar';
 
 export default function ReliefPhysioPage() {
   return (
-    <main className="min-h-screen flex flex-col bg-[#F8FAFC]">
+    <main className="min-h-[100dvh] w-full overflow-x-hidden flex flex-col bg-[#F8FAFC]">
       <Navbar />
       <HeroSection />
       <ProblemAgitation />

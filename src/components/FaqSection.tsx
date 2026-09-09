@@ -34,22 +34,22 @@ export default function FaqSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white border-t border-slate-200">
+    <section className="py-12 sm:py-16 md:py-24 bg-white border-t border-slate-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <span className="badge-soft-teal mb-3">
             <HelpCircle className="w-3.5 h-3.5" /> Frequently Asked Questions
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
             Common Questions & Honest Answers
           </h2>
-          <p className="mt-3 text-base text-slate-600">
+          <p className="mt-3 text-sm sm:text-base text-slate-600">
             Aapke mann me uthne wale sawalon ke transparent jawwab Dr. Rahul aur unki team ki taraf se.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -58,17 +58,18 @@ export default function FaqSection() {
                 className="border border-slate-200 rounded-2xl overflow-hidden transition-all bg-[#FAFBFD]"
               >
                 <button
+                  type="button"
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-bold text-slate-900 text-base sm:text-lg hover:text-[#0B4351] transition-colors"
+                  className="w-full text-left p-4 sm:p-6 flex items-center justify-between gap-3 font-bold text-slate-900 text-sm sm:text-base md:text-lg hover:text-[#0B4351] transition-colors cursor-pointer"
                 >
                   <span>{faq.question}</span>
-                  <div className={`w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-teal-50 text-[#0B4351]' : 'text-slate-500'}`}>
-                    <ChevronDown className="w-4 h-4" />
+                  <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-teal-50 text-[#0B4351]' : 'text-slate-500'}`}>
+                    <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-200/60 pt-4 bg-white">
+                  <div className="px-4 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3.5 sm:pt-4 bg-white">
                     <p>{faq.answer}</p>
                   </div>
                 )}
