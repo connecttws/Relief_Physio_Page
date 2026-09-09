@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary-teal: #0B4351;
+  --color-primary-teal-dark: #072B34;
+  --color-primary-teal-light: #166275;
+  --color-accent-mint: #0D9488;
+  --color-accent-mint-light: #E6FFFA;
+  --color-accent-mint-dark: #0F766E;
+  --color-accent-amber: #EA580C;
+  --color-accent-amber-hover: #C2410C;
+  --color-bg-base: #F8FAFC;
+  --color-bg-light: #FFFFFF;
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-outfit);
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: #0F172A;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+@layer utilities {
+  .btn-accent {
+    @apply inline-flex items-center justify-center font-bold text-white bg-[#EA580C] hover:bg-[#C2410C] transition-all duration-300 shadow-lg shadow-orange-600/20 hover:shadow-orange-600/40 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-orange-300 cursor-pointer;
+  }
+  
+  .btn-teal {
+    @apply inline-flex items-center justify-center font-semibold text-white bg-[#0B4351] hover:bg-[#166275] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-teal-300 cursor-pointer;
+  }
+
+  .badge-soft-teal {
+    @apply inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-semibold bg-[#0B4351]/10 text-[#0B4351] border border-[#0B4351]/15;
+  }
+
+  .badge-soft-mint {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0D9488]/10 text-[#0F766E] border border-[#0D9488]/20;
+  }
+
+  .card-premium {
+    @apply bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300;
+  }
+}
