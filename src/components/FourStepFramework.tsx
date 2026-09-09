@@ -1,164 +1,103 @@
 import React from 'react';
-import { Search, Activity, Dumbbell, ShieldCheck, ArrowRight, Check } from 'lucide-react';
+import { Layers, ArrowRight, CheckCircle2, Award } from 'lucide-react';
 
 export default function FourStepFramework() {
   const steps = [
     {
-      number: "01",
-      title: "Root-Cause Diagnosis",
-      hindiHeadline: "Proper Assessment & Actual Root-Cause Discovery",
-      description: "Sabse pehle hum aapke spine, knee ya neck ka in-depth physical assessment karte hain. Biomechanical movement, joint mobility, muscle imbalance aur nerve pathways check karke pata lagate hain ki pain kahan se trigger ho raha hai.",
-      icon: Search,
-      bullets: [
-        "In-depth physical & postural gait examination",
-        "Joint range-of-motion & flexibility analysis",
-        "Nerve compression & radiating trigger mapping",
-        "No guesswork — 100% individualised clinical diagnosis"
-      ],
-      badge: "Clinical Precision",
-      highlightColor: "border-teal-500/40 bg-teal-50/40",
-      accentBadgeColor: "bg-[#0B4351] text-white"
+      num: 'Step 1',
+      title: 'Diagnosis: Identifying the Real Root Cause',
+      desc: "Thorough assessment that goes beyond a quick look — pinpointing what's actually causing the pain.",
+      pillColor: 'bg-emerald-100 text-emerald-800 border-emerald-300',
+      accentBorder: 'border-t-emerald-500',
     },
     {
-      number: "02",
-      title: "Targeted Relief",
-      hindiHeadline: "Hands-On Manual Therapy & Immediate Decompression",
-      description: "Hands-on manual therapy aur targeted evidence-based techniques ke through joint stiffness, chronic muscle spasm aur restricted movement ko gently address kiya jata hai taaki aapko natural relief mile bina painkillers ke.",
-      icon: Activity,
-      bullets: [
-        "Joint mobilization & decompression techniques",
-        "Myofascial release for tight muscle knots",
-        "Targeted neurodynamics to soothe irritated nerves",
-        "Immediate decrease in pain intensity & stiffness"
-      ],
-      badge: "Fast Pain Relief",
-      highlightColor: "border-emerald-500/40 bg-emerald-50/40",
-      accentBadgeColor: "bg-emerald-700 text-white"
+      num: 'Step 2',
+      title: 'Relief: Targeted Manual Therapy',
+      desc: 'Hands-on techniques to ease muscle tightness and reduce pain without medication.',
+      pillColor: 'bg-teal-100 text-teal-800 border-teal-300',
+      accentBorder: 'border-t-teal-500',
     },
     {
-      number: "03",
-      title: "Deep Strengthening",
-      hindiHeadline: "Reinforce Spine & Joint Supporting Muscles",
-      description: "Sirf pain ko temporarily reduce karna enough nahi hai. Hum spine discs, knee joints aur cervical vertebrae ko support karne wali deep stabilizer muscles ko step-by-step strengthen karte hain taaki pain dobara na aaye.",
-      icon: Dumbbell,
-      bullets: [
-        "Deep core & spinal stabilizer muscle activation",
-        "Quadriceps, hamstring & hip stabilizer alignment",
-        "Scapular & cervical postural muscle reinforcement",
-        "Prevents recurring flare-ups & disc re-injury"
-      ],
-      badge: "Relapse Prevention",
-      highlightColor: "border-blue-500/40 bg-blue-50/40",
-      accentBadgeColor: "bg-blue-700 text-white"
+      num: 'Step 3',
+      title: 'Strengthening: Rebuilding Support',
+      desc: 'Guided exercises to strengthen the muscles protecting the affected joint or spine.',
+      pillColor: 'bg-emerald-100 text-emerald-800 border-emerald-300',
+      accentBorder: 'border-t-emerald-600',
     },
     {
-      number: "04",
-      title: "Long-Term Mobility",
-      hindiHeadline: "Personalised Routine for Confident Daily Life",
-      description: "Finally, aapke specific work routine, lifestyle aur daily habits ke according ek customised mobility plan diya jata hai. Chahe aap office me ghanto baithe ho ya household work kar rahe ho, aap confident aur pain-free move kar sakein.",
-      icon: ShieldCheck,
-      bullets: [
-        "Desk & office ergonomics posture recommendations",
-        "5-minute daily micro-mobility exercises at home",
-        "Safe lifting, bending & walking movement training",
-        "Lifelong independence without doctor dependency"
-      ],
-      badge: "Permanent Freedom",
-      highlightColor: "border-amber-500/40 bg-amber-50/40",
-      accentBadgeColor: "bg-amber-600 text-white"
-    }
+      num: 'Step 4',
+      title: 'Long-Term Mobility: Flexibility & Prevention',
+      desc: "A maintenance plan so pain doesn't return once the active treatment phase ends.",
+      pillColor: 'bg-cyan-100 text-cyan-800 border-cyan-300',
+      accentBorder: 'border-t-cyan-500',
+    },
   ];
 
   return (
-    <section id="framework" className="py-12 sm:py-16 md:py-24 bg-[#F8FAFC] relative">
+    <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden" id="framework">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <span className="badge-soft-teal mb-3">
-            Proprietary Treatment Protocol
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-            Dr. Rahul&apos;s <span className="text-[#0B4351]">4-Step Personalised</span> Treatment Approach
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 border border-amber-300/80 mb-3 shadow-xs">
+            <Award className="w-3.5 h-3.5 text-amber-700" /> The Rahul Recovery Method
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-tight">
+            The Treatment Process <span className="gradient-text">(4 Steps)</span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed">
-            &ldquo;Hum aapko koi generic exercise sheet dekar nahi chhodte. Har patient ke pain ka underlying trigger samajhkar yeh 4-step framework follow kiya jata hai.&rdquo;
+
+          <p className="mt-4 text-base sm:text-lg text-slate-600 font-medium">
+            Learn how Dr. Rahul&apos;s evidence-based <strong>4-Step Process</strong> can make your life <strong className="text-emerald-700 underline decoration-emerald-400">Pain-Free for the Long Term</strong>.
           </p>
         </div>
 
         {/* 4 Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {steps.map((step, idx) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={idx}
-                className={`relative bg-white rounded-3xl p-5 sm:p-7 md:p-8 border-2 ${step.highlightColor} shadow-md hover:shadow-xl transition-all flex flex-col justify-between h-full`}
-              >
-                <div>
-                  {/* Step Header */}
-                  <div className="flex items-center justify-between mb-5 sm:mb-6">
-                    <div className="flex items-center gap-2.5">
-                      <span className={`text-xs sm:text-sm font-extrabold px-3 py-1 rounded-full ${step.accentBadgeColor}`}>
-                        Step {step.number}
-                      </span>
-                      <span className="text-[11px] sm:text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                        {step.badge}
-                      </span>
-                    </div>
-
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#0B4351] shrink-0">
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#0D9488]" />
-                    </div>
-                  </div>
-
-                  {/* Title & Hindi Headline */}
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-1">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm font-semibold text-[#0B4351] mb-3 sm:mb-4">
-                    {step.hindiHeadline}
-                  </p>
-
-                  {/* Description */}
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">
-                    {step.description}
-                  </p>
-
-                  {/* Bullet Checklist */}
-                  <div className="space-y-2.5 pt-4 border-t border-slate-100">
-                    {step.bullets.map((bullet, bIdx) => (
-                      <div key={bIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 font-medium">
-                        <div className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
-                          <Check className="w-3 h-3 stroke-[3]" />
-                        </div>
-                        <span>{bullet}</span>
-                      </div>
-                    ))}
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, idx) => (
+            <div
+              key={idx}
+              className={`glass-card hover-lift p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 border-t-4 ${step.accentBorder} shadow-md relative flex flex-col justify-between group`}
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider border ${step.pillColor}`}>
+                    {step.num}
+                  </span>
+                  <span className="text-3xl font-black text-slate-200 group-hover:text-emerald-300 transition-colors">
+                    0{idx + 1}
+                  </span>
                 </div>
 
-                <div className="mt-6 sm:mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
-                  <span>Part of your 1-on-1 personalized plan</span>
-                  <span className="font-bold text-[#0B4351]">Evidence-Based</span>
-                </div>
+                <h3 className="text-lg font-extrabold text-slate-950 mb-3 leading-snug">
+                  {step.title}
+                </h3>
+                
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  {step.desc}
+                </p>
               </div>
-            );
-          })}
+
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-bold text-emerald-700">
+                <span>Clinical Phase 0{idx + 1}</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-auto group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* CTA Bar below steps */}
-        <div className="mt-10 sm:mt-14 text-center max-w-xl mx-auto px-2">
-          <p className="text-slate-700 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
-            Apne spine, knee ya neck pain ka permanent root-cause diagnosis chahte hain?
-          </p>
+        {/* CTA Banner */}
+        <div className="mt-14 text-center">
           <a
             href="#consultation"
-            className="btn-accent px-6 py-3.5 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base font-bold inline-flex items-center gap-2 group"
+            className="btn-primary-cta text-base sm:text-lg"
           >
-            <span>Book Your Root-Cause Assessment</span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform shrink-0" />
+            Book Your Consultation →
           </a>
+          <div className="mt-3 text-xs sm:text-sm font-semibold text-slate-500 flex items-center justify-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <span>Real diagnosis · Personalised treatment plan</span>
+          </div>
         </div>
 
       </div>

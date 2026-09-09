@@ -1,152 +1,164 @@
 import React from 'react';
-import { ShieldCheck, PlayCircle, Award, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import { Star, CheckCircle2, ShieldCheck, Users, Award, Stethoscope, ArrowRight, Sparkles, Activity } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-6 pb-14 md:pt-12 md:pb-20 bg-gradient-to-b from-white via-[#F4F8F8] to-[#F8FAFC] overflow-hidden">
-      {/* Background Soft Glows */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-r from-teal-100/40 via-emerald-100/30 to-amber-100/30 rounded-full blur-3xl -z-10" />
+    <section className="relative py-12 md:py-20 lg:py-24 bg-gradient-to-b from-slate-50 via-[#F0FDF4]/40 to-white overflow-hidden">
+      
+      {/* Background Decor Spheres */}
+      <div className="absolute top-10 right-10 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Eyebrow Tag */}
-        <div className="flex justify-center mb-4 sm:mb-5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200/80 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0D9488] shrink-0" />
-            <span className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#0B4351] tracking-wide uppercase">
-              Evidence-Based Root-Cause Pain Rehabilitation
-            </span>
-          </div>
-        </div>
-
-        {/* Main Hero Hook */}
-        <div className="text-center max-w-4xl mx-auto mb-8 md:mb-12">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.2] tracking-tight mb-4 sm:mb-5">
-            Kya Aap <span className="text-[#0B4351] underline decoration-[#0D9488]/40 decoration-4">Spine, Knee ya Neck Pain</span> Se Pareshan Hain?
-          </h1>
-
-          <p className="text-base sm:text-lg md:text-xl text-slate-700 font-medium leading-relaxed max-w-3xl mx-auto">
-            Painkillers, massages aur random YouTube exercises try kiye, <br className="hidden sm:inline" />
-            <span className="text-rose-600 font-semibold">lekin pain baar-baar wapas aa jata hai?</span>
-          </p>
-
-          <div className="mt-4 p-3 sm:p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 inline-block max-w-2xl mx-auto text-left sm:text-center">
-            <p className="text-xs sm:text-sm md:text-base text-amber-900 font-semibold">
-              ⚠️ Problem sirf pain nahi hai — problem yeh hai ki pain ki <span className="underline decoration-amber-500 font-bold">actual root cause</span> identify hi nahi hui hai.
-            </p>
-          </div>
-        </div>
-
-        {/* Grid: Empty Video Frame Box & Quick Callout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center max-w-6xl mx-auto">
+        
+        {/* Main Hero 2-Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* Empty VSL Video Container (Col 1-7) */}
-          <div className="lg:col-span-7">
-            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-2 border-slate-700/60 aspect-video group flex flex-col items-center justify-center p-6 text-center">
-              {/* Subtle background tech pattern / grid */}
-              <div className="absolute inset-0 bg-[radial-gradient(#166275_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none" />
-              
-              {/* Corner Accents */}
-              <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-teal-400/50" />
-              <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-teal-400/50" />
-              <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-teal-400/50" />
-              <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-teal-400/50" />
+          {/* Left Column (Copy + CTAs + Reassurance) */}
+          <div className="lg:col-span-7 space-y-6 text-left">
+            
+            {/* Eyebrow Tag */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-bold text-[#064E3B] bg-emerald-100/80 border border-emerald-300/60 shadow-xs">
+              <Sparkles className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Especially for Busy Professionals, Business Owners, Parents &amp; Older Adults with Spine, Knee or Neck Pain</span>
+            </div>
 
-              {/* Center Empty Frame Element */}
-              <div className="relative z-10 flex flex-col items-center justify-center">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/5 border border-teal-400/30 flex items-center justify-center shadow-lg backdrop-blur-xs mb-3 group-hover:scale-105 transition-transform duration-300">
-                  <PlayCircle className="w-7 h-7 sm:w-8 sm:h-8 text-teal-300" />
-                </div>
-                <h3 className="text-sm sm:text-base font-bold text-white tracking-wide">
-                  Video Presentation Frame
-                </h3>
-                <p className="text-xs text-slate-400 mt-1 max-w-xs">
-                  Empty video frame placeholder (16:9)
-                </p>
+            {/* Headline */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.15]">
+              Overcome Spine, Knee &amp; Neck Pain — <span className="gradient-text underline decoration-emerald-500/40 underline-offset-8">With Real Physiotherapy</span>, Not Guesswork
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-base sm:text-lg text-slate-600 font-medium leading-relaxed max-w-2xl">
+              Get a personalised assessment from <strong>Dr. Rahul</strong>, a qualified physiotherapist — in-clinic in <strong>Mayur Vihar, Delhi</strong> or from the comfort of your home <strong>online, Pan-India</strong>.
+            </p>
+
+            {/* Rating Badge */}
+            <div className="inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-amber-50/90 border border-amber-200/80 shadow-xs">
+              <div className="flex text-amber-500">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <span className="text-xs sm:text-sm font-bold text-amber-950">
+                4.0 | 1430+ Reviews on Google
+              </span>
+            </div>
+
+            {/* CTA + Reassurance Block */}
+            <div className="pt-2 space-y-3">
+              <div>
+                <a
+                  href="#consultation"
+                  className="btn-primary-cta w-full sm:w-auto text-base sm:text-lg group"
+                >
+                  <span>Book Your Consultation →</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
 
-              {/* Bottom Video Info Tag */}
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-slate-400 px-2 pointer-events-none">
-                <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" /> Frame Ready
+              {/* Reassurance Line Under CTA */}
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 flex-wrap">
+                <span className="flex items-center gap-1 text-emerald-700">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  Real diagnosis
                 </span>
-                <span>Aspect Ratio 16:9</span>
+                <span>·</span>
+                <span className="flex items-center gap-1 text-emerald-700">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  Personalised treatment plan
+                </span>
+                <span>·</span>
+                <span className="flex items-center gap-1 text-emerald-700">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  No unnecessary surgery-first approach
+                </span>
               </div>
             </div>
 
-            <p className="text-center text-xs sm:text-sm text-slate-700 mt-3 font-medium flex items-center justify-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>4-Step Root-Cause Physiotherapy Protocol Overview</span>
-            </p>
           </div>
 
-          {/* Right Action & Value Card (Col 8-12) */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-5 bg-white p-5 sm:p-7 md:p-8 rounded-2xl border border-slate-200 shadow-lg shadow-slate-100">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-teal-50 text-[#0B4351] text-xs font-bold uppercase tracking-wider mb-2">
-                <Award className="w-4 h-4 text-[#0D9488] shrink-0" /> 12+ Years Clinical Authority
-              </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 leading-tight">
-                Meet Dr. Rahul & The Relief Physio Team
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-                Helped <strong className="text-slate-900">10,000+ patients</strong> overcome chronic spine, knee & neck pain without unnecessary surgery or lifelong medicines.
-              </p>
-            </div>
+          {/* Right Column (Hero Visual Showcase Card) */}
+          <div className="lg:col-span-5 relative">
+            <div className="glass-card p-3 rounded-3xl border border-slate-200/90 shadow-2xl relative group">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 aspect-[16/10] sm:aspect-[16/9]">
+                <img
+                  src="/images/dr_rahul_assessment.jpg"
+                  alt="Dr Rahul Physiotherapy Assessment"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
 
-            {/* Quick Benefits Checklist */}
-            <div className="space-y-2.5 pt-2 border-t border-slate-100 text-xs sm:text-sm text-slate-700 font-medium">
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>No generic exercise sheets</strong> — 100% customised protocol</span>
+                {/* Overlaid Badge on Image */}
+                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/80 flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+                      <Stethoscope className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-extrabold text-slate-900">Dr. Rahul Assessment</div>
+                      <div className="text-[10px] text-slate-500">In-Clinic Mayur Vihar &amp; Tele-Physio</div>
+                    </div>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-md bg-emerald-500 text-white text-[10px] font-black uppercase tracking-wider">
+                    Verified
+                  </span>
+                </div>
               </div>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Root-Cause physical assessment</strong> before any therapy begins</span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Advanced hands-on manual therapy</strong> for fast stiffness relief</span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Strengthening & ergonomic plan</strong> for permanent mobility</span>
-              </div>
-            </div>
 
-            {/* Primary CTA */}
-            <div className="pt-1 sm:pt-2">
-              <a
-                href="#consultation"
-                className="btn-accent w-full py-3.5 sm:py-4 px-5 sm:px-6 rounded-xl text-sm sm:text-base font-bold flex items-center justify-center gap-2 group"
-              >
-                <span>Book Your Consultation Slot</span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform shrink-0" />
-              </a>
-              <p className="text-center text-[11px] sm:text-xs text-slate-600 mt-2">
-                ⚡ Limited slots available this week • Clinic & Online Available
-              </p>
+              {/* Floating Guarantee Sticker Tag */}
+              <div className="absolute -top-4 -right-4 sticker-tag px-3.5 py-1.5 rounded-full text-xs font-black flex items-center gap-1.5 z-10 animate-bounce">
+                <ShieldCheck className="w-4 h-4 text-amber-700" />
+                <span>100% Non-Surgical Focus</span>
+              </div>
             </div>
           </div>
 
         </div>
 
-        {/* 4 Trust Counters */}
-        <div className="mt-10 sm:mt-14 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
-          <div className="bg-white/90 backdrop-blur-xs p-3.5 sm:p-5 rounded-xl border border-slate-200 text-center shadow-xs">
-            <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#0B4351]">10,000+</p>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">Patients Relieved</p>
-          </div>
-          <div className="bg-white/90 backdrop-blur-xs p-3.5 sm:p-5 rounded-xl border border-slate-200 text-center shadow-xs">
-            <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#0B4351]">12+ Years</p>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">Clinical Experience</p>
-          </div>
-          <div className="bg-white/90 backdrop-blur-xs p-3.5 sm:p-5 rounded-xl border border-slate-200 text-center shadow-xs">
-            <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-emerald-700">0 Surgery</p>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">Non-Invasive Focus</p>
-          </div>
-          <div className="bg-white/90 backdrop-blur-xs p-3.5 sm:p-5 rounded-xl border border-slate-200 text-center shadow-xs">
-            <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-amber-600">4-Step</p>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">Proven Framework</p>
+        {/* 3. Section 3: Trust Counters */}
+        <div className="mt-16 sm:mt-20 pt-10 border-t border-slate-200/80">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            
+            {/* Stat 1 */}
+            <div className="glass-card hover-lift p-6 rounded-2xl bg-white border border-slate-200/80 shadow-md text-center flex flex-col items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center mb-3">
+                <Users className="w-6 h-6" />
+              </div>
+              <div className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
+                10000+
+              </div>
+              <div className="text-xs sm:text-sm font-bold text-slate-600 mt-1">
+                Patients Treated Successfully
+              </div>
+            </div>
+
+            {/* Stat 2 */}
+            <div className="glass-card hover-lift p-6 rounded-2xl bg-white border border-slate-200/80 shadow-md text-center flex flex-col items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-teal-100 text-teal-800 flex items-center justify-center mb-3">
+                <Award className="w-6 h-6" />
+              </div>
+              <div className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
+                12+ Years
+              </div>
+              <div className="text-xs sm:text-sm font-bold text-slate-600 mt-1">
+                Of Physiotherapy Practice
+              </div>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="glass-card hover-lift p-6 rounded-2xl bg-white border border-slate-200/80 shadow-md text-center flex flex-col items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center mb-3">
+                <Activity className="w-6 h-6" />
+              </div>
+              <div className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
+                25+ Conditions
+              </div>
+              <div className="text-xs sm:text-sm font-bold text-slate-600 mt-1">
+                Treated (Back, Neck, Knee, Sports Injury, Post-Surgery Rehab, etc.)
+              </div>
+            </div>
+
           </div>
         </div>
 

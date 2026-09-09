@@ -2,10 +2,10 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ProblemAgitation from '@/components/ProblemAgitation';
+import ConsultationDeliverables from '@/components/ConsultationDeliverables';
 import FourStepFramework from '@/components/FourStepFramework';
-import DoctorBio from '@/components/DoctorBio';
-import ComparisonTable from '@/components/ComparisonTable';
 import ConditionsGrid from '@/components/ConditionsGrid';
+import DoctorBio from '@/components/DoctorBio';
 import Testimonials from '@/components/Testimonials';
 import BookingForm from '@/components/BookingForm';
 import FaqSection from '@/components/FaqSection';
@@ -18,10 +18,10 @@ export default function ReliefPhysioPage() {
       <Navbar />
       <HeroSection />
       <ProblemAgitation />
+      <ConsultationDeliverables />
       <FourStepFramework />
-      <DoctorBio />
-      <ComparisonTable />
       <ConditionsGrid />
+      <DoctorBio />
       <Testimonials />
       <BookingForm />
       <FaqSection />

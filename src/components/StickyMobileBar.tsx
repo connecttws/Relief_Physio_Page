@@ -1,26 +1,23 @@
 import React from 'react';
-import { Calendar, Phone } from 'lucide-react';
+import { Calendar, Sparkles } from 'lucide-react';
 
 export default function StickyMobileBar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 sm:hidden shadow-2xl">
-      <div className="grid grid-cols-2 gap-2 max-w-md mx-auto">
-        <a
-          href="tel:+919829000000"
-          className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-800 bg-white shadow-xs hover:bg-slate-50 transition-colors"
-        >
-          <Phone className="w-3.5 h-3.5 text-[#0D9488]" />
-          <span>Call Clinic</span>
-        </a>
-
+    <aside className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-t border-emerald-500/30 p-3 shadow-2xl">
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2 text-white text-xs font-bold">
+          <span className="pulse-dot"></span>
+          <span>Clinic ya Online — Choice Aapki</span>
+        </div>
+        
         <a
           href="#consultation"
-          className="btn-accent flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-extrabold shadow-md"
+          className="btn-primary-cta !py-2.5 !px-4 !text-xs uppercase tracking-wider shrink-0"
         >
           <Calendar className="w-3.5 h-3.5" />
-          <span>Book Slot</span>
+          <span>Book Consultation →</span>
         </a>
       </div>
-    </div>
+    </aside>
   );
 }

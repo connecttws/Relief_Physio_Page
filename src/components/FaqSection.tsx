@@ -1,81 +1,70 @@
-'use client';
-
-import React, { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import React from 'react';
+import { HelpCircle, ChevronDown, Sparkles } from 'lucide-react';
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   const faqs = [
     {
-      question: "Mujhe doctor ne surgery suggest ki hai, kya yeh treatment mere liye kaam karega?",
-      answer: "Dr. Rahul ke clinical data ke anusaar, lagbhag 90% patients jinhe spine disc bulge ya knee osteoarthritis ke liye surgery kahi jati hai, unka condition evidence-based manual decompression aur stabilizer muscle strengthening se completely manage ho jata hai. First assessment session me Dr. Rahul aapki MRI/X-ray aur physical mobility test karke frankly bataenge ki conservative physiotherapy se kitna improvement possible hai."
+      q: 'Can physiotherapy guarantee complete pain relief?',
+      a: 'Physiotherapy addresses the root cause through assessment, manual therapy and targeted exercise. Most patients see significant improvement, but results depend on condition severity, consistency and individual health factors.',
     },
     {
-      question: "Treatment me aamtaur par kitne sessions lagte hain?",
-      answer: "Yeh aapke condition ki severity aur duration par depend karta hai. Acute pain (halka stiffness) me 5-8 sessions me relief aa jata hai. Chronic cases (purana sciatica ya advanced knee pain) me 3-6 weeks ka structured protocol lagta hai, jisme Step 1 aur Step 2 me pehle dard kam hota hai, aur Step 3 aur 4 me joints ko permanently strengthen kiya jata hai."
+      q: 'What conditions does Dr Rahul treat?',
+      a: 'Dr Rahul treats lower back pain, cervical spondylosis, knee osteoarthritis, sciatica, disc bulge/herniation, sports injuries, frozen shoulder, postural stiffness, and post-surgery rehabilitation.',
     },
     {
-      question: "Kya online video consultation spine ya knee pain ke liye utna hi effective hai?",
-      answer: "Haan! Agar aap Jaipur se bahar rehte hain, toh video assessment ke dauraan Dr. Rahul aapki movement analysis, nerve tests aur pain triggers live screen par guide karke evaluate karte hain. Saath hi customised guided home-routines aur ergonomic corrections provide karte hain, jisse hazaron outstation patients pain-free hue hain."
+      q: 'How is the online consultation different from an in-clinic visit?',
+      a: 'Online consultations are done over video call — Dr Rahul assesses your movement and pain pattern live and builds a home-based treatment plan. In-clinic visits add hands-on manual therapy where needed.',
     },
     {
-      question: "Pehle kisi physiotherapist ne exercises di thi jisse mera pain badh gaya, aisa kyun?",
-      answer: "Generic exercise sheets dekar chhod dena sabse badi galti hoti hai. For example, agar kisi ko flexion-type disc hernia hai aur use aage jhukne wale stretches diye jaaein, toh pain trigger ho jata hai. Dr. Rahul pehle exact root-cause evaluate karte hain aur sirf wahi specific movements allow karte hain jo aapke nerve ya joint ke liye safe hain."
+      q: 'Do I need any equipment for an online session?',
+      a: 'A smartphone or laptop with a stable internet connection is enough. A yoga mat or flat open space and comfortable clothing are recommended.',
     },
     {
-      question: "First consultation assessment me kya hota hai?",
-      answer: "Initial consultation lagbhag 40-45 minutes ka hota hai. Isme aapki complete medical history, previous scan reports (agar hain), posture alignment test, range of motion, muscle strength aur nerve tension tests kiye jaate hain. Iske baad aapko clear recovery roadmap aur step-by-step plan samjhaya jata hai."
+      q: 'How do I book an appointment?',
+      a: "Click any 'Book Your Consultation' button on this page, choose clinic or online, and confirm your slot. You'll receive a confirmation by WhatsApp/Email.",
     },
-    {
-      question: "Kya mujhe har roz clinic aana padega?",
-      answer: "Nahi. Starting phases me weekly 2 se 3 sessions recommend kiye jaate hain manual therapy ke liye. Baaki days ke liye aapko easy 5-minute home routines diye jaate hain taaki aapka time aur travel convenience maintain rahe."
-    }
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-white border-t border-slate-200">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span className="badge-soft-teal mb-3">
-            <HelpCircle className="w-3.5 h-3.5" /> Frequently Asked Questions
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="badge-shimmer inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/80 mb-3 border border-emerald-300/50">
+            <HelpCircle className="w-3.5 h-3.5" /> Got Questions?
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-            Common Questions & Honest Answers
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-tight">
+            Frequently Asked <span className="gradient-text">Questions</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Aapke mann me uthne wale sawalon ke transparent jawwab Dr. Rahul aur unki team ki taraf se.
+          <p className="mt-4 text-base sm:text-lg text-slate-600 font-medium">
+            Find answers to common questions to help you get the most out of your consultation with Dr. Rahul.
           </p>
         </div>
 
-        <div className="space-y-3 sm:space-y-4">
-          {faqs.map((faq, idx) => {
-            const isOpen = openIndex === idx;
-            return (
-              <div
-                key={idx}
-                className="border border-slate-200 rounded-2xl overflow-hidden transition-all bg-[#FAFBFD]"
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full text-left p-4 sm:p-6 flex items-center justify-between gap-3 font-bold text-slate-900 text-sm sm:text-base md:text-lg hover:text-[#0B4351] transition-colors cursor-pointer"
-                >
-                  <span>{faq.question}</span>
-                  <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-teal-50 text-[#0B4351]' : 'text-slate-500'}`}>
-                    <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  </div>
-                </button>
+        {/* Accordion List */}
+        <div className="max-w-3xl mx-auto space-y-4">
+          {faqs.map((faq, idx) => (
+            <details
+              key={idx}
+              className="group glass-card rounded-2xl bg-white border border-slate-200/90 shadow-xs overflow-hidden transition-all duration-300 [&[open]]:shadow-lg [&[open]]:border-emerald-400"
+              {...(idx === 0 ? { open: true } : {})}
+            >
+              <summary className="flex items-center justify-between p-5 sm:p-6 text-slate-950 font-bold text-base sm:text-lg cursor-pointer select-none list-none group-hover:text-emerald-700 transition-colors">
+                <span className="flex items-center gap-3">
+                  <span className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-800 text-xs flex items-center justify-center font-black shrink-0 border border-emerald-200">
+                    Q{idx + 1}
+                  </span>
+                  <span>{faq.q}</span>
+                </span>
+                <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 group-open:text-emerald-600 transition-transform duration-300 shrink-0 ml-3" />
+              </summary>
 
-                {isOpen && (
-                  <div className="px-4 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3.5 sm:pt-4 bg-white">
-                    <p>{faq.answer}</p>
-                  </div>
-                )}
+              <div className="px-6 pb-6 pt-2 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100">
+                {faq.a}
               </div>
-            );
-          })}
+            </details>
+          ))}
         </div>
 
       </div>

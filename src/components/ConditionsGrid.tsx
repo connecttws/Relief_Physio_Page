@@ -1,115 +1,86 @@
 import React from 'react';
-import { Activity, Disc, Bone, Move, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Laptop, Briefcase, Heart, Users, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function ConditionsGrid() {
-  const conditions = [
+  const audiences = [
     {
-      title: "Spine & Lower Back Pain",
-      hindiSubtitle: "Sciatica, Slip Disc, Lumbar Stiffness",
-      icon: Disc,
-      symptoms: [
-        "Sharp shooting pain down the leg (Sciatica)",
-        "Stiffness while bending or standing up from chair",
-        "Disc bulge / herniation nerve compression",
-        "Chronic dull ache during long sitting or driving"
-      ],
-      solutionTag: "Decompression & Core Stabilizer Therapy"
+      icon: Laptop,
+      title: 'Desk Job Professionals',
+      desc: 'Long sitting hours causing back or neck pain and posture stiffness',
+      color: 'from-emerald-500 to-teal-700',
+      tag: 'Office / Remote',
     },
     {
-      title: "Knee Pain & Degeneration",
-      hindiSubtitle: "Osteoarthritis, Joint Friction, Meniscus Strain",
-      icon: Bone,
-      symptoms: [
-        "Clicking / grinding sensation while climbing stairs",
-        "Morning stiffness and difficulty walking straight",
-        "Knee joint gap reduction / early osteoarthritis",
-        "Weak quadriceps and unstable kneecap tracking"
-      ],
-      solutionTag: "Cartilage Protection & Quad Alignment"
+      icon: Briefcase,
+      title: 'Business Owners & Entrepreneurs',
+      desc: 'Pain affecting focus, travel, and business productivity',
+      color: 'from-amber-500 to-orange-600',
+      tag: 'High Energy',
     },
     {
-      title: "Neck & Cervical Pain",
-      hindiSubtitle: "Cervical Spondylosis, Tech Neck, Numbness",
-      icon: Activity,
-      symptoms: [
-        "Severe neck stiffness after computer/mobile use",
-        "Pain radiating into shoulders, upper back or hands",
-        "Tingling / numbness in fingers and forearm",
-        "Frequent tension headaches starting from neck base"
-      ],
-      solutionTag: "Postural Realignment & Nerve Flossing"
+      icon: Heart,
+      title: 'Older Adults (55+)',
+      desc: 'Gentle, safe techniques for better mobility, joint comfort, and independence',
+      color: 'from-rose-500 to-pink-600',
+      tag: 'Gentle Care',
     },
     {
-      title: "Shoulder & Posture Rehab",
-      hindiSubtitle: "Frozen Shoulder, Rotator Cuff, Slouching",
-      icon: Move,
-      symptoms: [
-        "Inability to lift arm overhead or reach behind back",
-        "Severe night pain while sleeping on shoulder side",
-        "Rounded shoulders and forward head posture",
-        "Tendon inflammation & chronic shoulder impingement"
-      ],
-      solutionTag: "Capsular Release & Rotator Cuff Conditioning"
-    }
+      icon: Users,
+      title: 'Working Parents',
+      desc: 'Managing home and work despite body pain and fatigue',
+      color: 'from-blue-500 to-indigo-600',
+      tag: 'Active Lifestyle',
+    },
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-[#F8FAFC]">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span className="badge-soft-teal mb-3">Specialized Conditions</span>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-            Konsi Problem Se <span className="text-[#0B4351]">Aap Sabse Zyaada Pareshan Hain?</span>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="badge-shimmer inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/80 mb-3 border border-emerald-300/50">
+            <Sparkles className="w-3.5 h-3.5" /> Target Audience
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-tight">
+            Who This Is <span className="gradient-text">For</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Dr. Rahul&apos;s 4-step framework has specialized clinical protocols for every joint and spine condition.
+          <p className="mt-4 text-base sm:text-lg text-slate-600 font-medium">
+            Designed specifically for individuals who want targeted, long-lasting relief without surgery.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
-          {conditions.map((item, idx) => {
-            const Icon = item.icon;
+        {/* Audience Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {audiences.map((aud, idx) => {
+            const IconComp = aud.icon;
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-5 sm:p-7 md:p-8 border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full"
+                className="glass-card hover-lift p-6 rounded-3xl bg-slate-50/70 border border-slate-200/90 shadow-md relative flex flex-col justify-between group"
               >
                 <div>
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center text-[#0B4351] shrink-0">
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#0D9488]" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${aud.color} text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}>
+                      <IconComp className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] sm:text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-                      {item.solutionTag}
+                    <span className="px-2.5 py-1 rounded-full bg-white text-slate-700 border border-slate-200 text-[10px] font-bold uppercase tracking-wider">
+                      {aud.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 mb-1">
-                    {item.title}
+                  <h3 className="text-lg font-bold text-slate-950 mb-2 leading-snug">
+                    {aud.title}
                   </h3>
-                  <p className="text-xs sm:text-sm font-semibold text-[#0B4351] mb-4">
-                    {item.hindiSubtitle}
-                  </p>
 
-                  <div className="space-y-2.5">
-                    {item.symptoms.map((symptom, sIdx) => (
-                      <div key={sIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>{symptom}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    {aud.desc}
+                  </p>
                 </div>
 
-                <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-slate-100 flex items-center justify-between">
-                  <a
-                    href="#consultation"
-                    className="text-xs sm:text-sm font-bold text-[#0B4351] hover:text-[#0D9488] inline-flex items-center gap-1.5 transition-colors"
-                  >
-                    <span>Get Assessment For This Condition</span>
-                    <ArrowRight className="w-4 h-4 shrink-0" />
-                  </a>
+                <div className="mt-6 pt-3 border-t border-slate-200/60 flex items-center gap-1.5 text-xs font-bold text-emerald-700">
+                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                  <span>Tailored Recovery Plan</span>
                 </div>
               </div>
             );

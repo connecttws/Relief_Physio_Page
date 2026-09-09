@@ -1,85 +1,93 @@
 import React from 'react';
-import { Star, Quote, CheckCircle2 } from 'lucide-react';
+import { Star, Quote, CheckCircle2, MessageSquareHeart } from 'lucide-react';
 
 export default function Testimonials() {
   const reviews = [
     {
-      name: "Rajesh Sharma",
-      age: "48 years, Bank Manager",
-      condition: "Severe L4-L5 Disc Herniation & Sciatica",
-      feedback: "Mai pichle 2 saal se painkillers le raha tha aur YouTube ki exercises se mera pain aur badh gaya tha. Doctors ne surgery suggest ki thi. Dr. Rahul ke 4-step framework ke 3rd week me hi mera nerve pain 80% kam ho gaya. Aaj mai bina kisi dawai ke normal walk kar pa raha hoon!",
-      stars: 5,
-      reliefDays: "Pain-free in 4 weeks"
+      name: 'Rajesh Sharma',
+      location: 'Mayur Vihar, Delhi',
+      mode: 'In-Clinic Patient',
+      rating: 5,
+      text: 'I was struggling with chronic lower back stiffness for over 8 months. Dr. Rahul\'s assessment identified the exact postural trigger. The personalized exercises gave me lasting relief!',
     },
     {
-      name: "Sunita Agarwal",
-      age: "54 years, Homemaker",
-      condition: "Grade 3 Knee Osteoarthritis",
-      feedback: "Seedhiyan chadhne me itni takleef hoti thi ki lagta tha knee replacement hi aakhri option hai. Dr. Rahul ne manual joint therapy aur targeted quad strengthening karwayi. Aaj 6 mahine ho gaye, no knee swelling and completely independent mobility!",
-      stars: 5,
-      reliefDays: "Surgery avoided completely"
+      name: 'Sunita Agarwal',
+      location: 'Online Tele-Physio',
+      mode: 'Pan-India Video Patient',
+      rating: 5,
+      text: 'I did the online tele-physio consultation for knee pain. Dr. Rahul observed my gait live on camera and guided me through targeted exercises. Super effective!',
     },
     {
-      name: "Vikram Malhotra",
-      age: "36 years, Senior IT Consultant",
-      condition: "Chronic Cervical Spondylosis & Arm Numbness",
-      feedback: "10-12 ghante laptop par kaam karne se right haath me tingling hoti thi. Generic physiotherapy centres par sirf heating machine lagate the. Dr. Rahul ne root cause pakdi — meri upper spine locked thi. Unke manual treatment se 100% cure hua.",
-      stars: 5,
-      reliefDays: "Full range of motion restored"
-    }
+      name: 'Vikram Malhotra',
+      location: 'Desk Job Professional',
+      mode: 'Cervical Spondylosis',
+      rating: 5,
+      text: 'Long desk hours caused severe cervical neck pain and dizziness. Dr. Rahul provided hands-on manual guidance and an ergonomic plan that helped me recover completely.',
+    },
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-white border-t border-slate-200">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span className="badge-soft-teal mb-3">Real Patient Results</span>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-            10,000+ Log <span className="text-[#0B4351]">Dard Se Azaad Ho Chuke Hain</span>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="badge-shimmer inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/80 mb-3 border border-emerald-300/50">
+            <MessageSquareHeart className="w-3.5 h-3.5" /> Social Proof &amp; Reviews
+          </span>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-tight">
+            Patient Recovery <span className="gradient-text">Stories</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600">
-            Read how patients stopped recurring pain and avoided unnecessary surgery through Dr. Rahul&apos;s personalized approach.
-          </p>
+
+          {/* Google Rating Banner Badge */}
+          <div className="mt-4 inline-flex flex-wrap items-center justify-center gap-2 bg-amber-50 border border-amber-200/80 px-5 py-2.5 rounded-full shadow-xs">
+            <span className="font-black text-amber-950 text-sm sm:text-base">Rated 4.0</span>
+            <div className="flex text-amber-500">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-amber-400 text-amber-400" />
+              ))}
+            </div>
+            <span className="text-xs sm:text-sm text-amber-900 font-bold">
+              | 1430+ Reviews on Google
+            </span>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-8">
+        {/* Reviews Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="bg-[#FAFBFD] rounded-3xl p-5 sm:p-7 border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between h-full"
+              className="glass-card hover-lift p-7 rounded-3xl bg-slate-50/70 border border-slate-200/90 shadow-md relative flex flex-col justify-between group"
             >
               <div>
-                {/* Rating Stars & Quote */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-amber-500">
-                    {[...Array(rev.stars)].map((_, sIdx) => (
-                      <Star key={sIdx} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400" />
+                  <div className="flex text-amber-400">
+                    {[...Array(rev.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-teal-200" />
+                  <Quote className="w-6 h-6 text-slate-300 group-hover:text-emerald-500 transition-colors" />
                 </div>
 
-                <span className="inline-block px-2.5 py-1 rounded-md text-xs font-bold bg-teal-50 text-[#0B4351] border border-teal-200 mb-3">
-                  {rev.condition}
-                </span>
-
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic mb-6">
-                  &ldquo;{rev.feedback}&rdquo;
+                <p className="text-slate-700 text-xs sm:text-sm leading-relaxed italic mb-6">
+                  &ldquo;{rev.text}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-200/80">
-                <div className="flex items-center justify-between gap-2">
-                  <div>
-                    <h4 className="font-bold text-slate-900 text-xs sm:text-sm">{rev.name}</h4>
-                    <p className="text-[11px] sm:text-xs text-slate-600">{rev.age}</p>
-                  </div>
-                  <div className="flex items-center gap-1 text-xs font-bold text-emerald-700 shrink-0">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>{rev.reliefDays}</span>
-                  </div>
+              <div className="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                <div>
+                  <h4 className="text-sm font-bold text-slate-950 flex items-center gap-1.5">
+                    {rev.name}
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  </h4>
+                  <span className="text-[11px] text-slate-500 font-medium">{rev.location}</span>
                 </div>
+                
+                <span className="px-2.5 py-1 rounded-md bg-emerald-100/90 text-emerald-800 text-[10px] font-bold">
+                  {rev.mode}
+                </span>
               </div>
             </div>
           ))}
