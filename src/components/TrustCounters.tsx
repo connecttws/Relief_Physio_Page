@@ -7,25 +7,28 @@ const STATS = [
     icon: Users,
     value: '10,000+',
     label: 'Patients Treated',
-    sub: 'Successfully',
+    sub: 'Successfully across India',
     color: '#00897B',
     bg: '#E0F2F1',
+    gradient: 'linear-gradient(135deg,#00897B,#00695C)',
   },
   {
     icon: Award,
     value: '12+ Years',
-    label: 'Physiotherapy Practice',
-    sub: 'Expert experience',
+    label: 'Clinical Experience',
+    sub: 'Evidence-based practice',
     color: '#E05A2B',
     bg: '#FFF3EE',
+    gradient: 'linear-gradient(135deg,#E05A2B,#C44B22)',
   },
   {
     icon: Layers,
     value: '25+',
     label: 'Conditions Treated',
-    sub: 'Back, neck, knee & more',
+    sub: 'Spine · Knee · Neck & more',
     color: '#7C3AED',
     bg: '#F3EDFF',
+    gradient: 'linear-gradient(135deg,#7C3AED,#5B21B6)',
   },
 ];
 
@@ -33,11 +36,9 @@ export default function TrustCounters() {
   return (
     <section
       style={{
-        background: '#fff',
-        paddingBlock: 'clamp(20px, 4vw, 44px)',
-        paddingInline: '16px',
-        borderTop: '1px solid #F1F5F9',
-        borderBottom: '1px solid #F1F5F9',
+        background: '#0B1F3A',
+        paddingBlock: '40px',
+        paddingInline: '24px',
       }}
     >
       <div
@@ -45,12 +46,13 @@ export default function TrustCounters() {
           maxWidth: '1120px',
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: 'clamp(12px, 3vw, 24px)',
+          gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))',
+          gap: '2px',
         }}
       >
-        {STATS.map(stat => {
+        {STATS.map((stat, i) => {
           const Icon = stat.icon;
+          const isMiddle = i === 1;
           return (
             <div
               key={stat.label}
@@ -58,52 +60,46 @@ export default function TrustCounters() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '16px',
-                padding: '20px 24px',
-                background: '#FAFAFA',
-                border: '1px solid #F1F5F9',
-                borderRadius: '16px',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                padding: '28px 32px',
+                background: isMiddle ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.03)',
+                borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.07)' : 'none',
+                transition: 'background 0.3s',
               }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
-                (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 36px rgba(11,31,58,0.08)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-              }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.09)'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = isMiddle ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.03)'}
             >
               <div
                 style={{
                   width: '52px',
                   height: '52px',
                   borderRadius: '14px',
-                  background: stat.bg,
+                  background: stat.gradient,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   flexShrink: 0,
+                  boxShadow: `0 6px 20px ${stat.color}40`,
                 }}
               >
-                <Icon size={24} color={stat.color} />
+                <Icon size={24} color="#fff" />
               </div>
               <div>
                 <div
                   style={{
-                    fontFamily: "'Outfit', sans-serif",
-                    fontWeight: 800,
-                    fontSize: '1.55rem',
-                    color: '#0B1F3A',
+                    fontFamily: "'Outfit',sans-serif",
+                    fontWeight: 900,
+                    fontSize: '1.7rem',
+                    color: '#fff',
                     letterSpacing: '-0.03em',
                     lineHeight: 1.1,
                   }}
                 >
                   {stat.value}
                 </div>
-                <div style={{ fontWeight: 600, fontSize: '0.88rem', color: '#1E293B', marginTop: '2px' }}>
+                <div style={{ fontWeight: 600, fontSize: '0.85rem', color: 'rgba(255,255,255,0.80)', marginTop: '2px' }}>
                   {stat.label}
                 </div>
-                <div style={{ fontSize: '0.75rem', color: '#94A3B8', marginTop: '1px' }}>
+                <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.38)', marginTop: '1px' }}>
                   {stat.sub}
                 </div>
               </div>

@@ -58,20 +58,27 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-inter, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
   background: var(--c-bg);
   color: var(--c-ink);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(0, 137, 123, 0.20);
+  color: #004D40;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', 'Inter', sans-serif;
-  letter-spacing: -0.02em;
+  font-family: var(--font-outfit, 'Outfit', 'Inter', sans-serif);
+  letter-spacing: -0.025em;
   line-height: 1.2;
   color: var(--c-navy);
+  font-weight: 800;
 }
 
 a {

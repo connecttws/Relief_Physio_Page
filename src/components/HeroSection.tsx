@@ -72,7 +72,7 @@ export default function HeroSection() {
             textAlign: 'center',
           }}
         >
-          Overcome Spine, Knee &amp;<br style={{ display: 'block' }} className="sm:hidden" /> Neck Pain
+          Overcome Spine, Knee &amp; Neck Pain
           <span style={{ display: 'block', marginTop: '8px' }}>
             With{' '}
             <span
@@ -86,7 +86,7 @@ export default function HeroSection() {
             >
               Real Physiotherapy
             </span>
-            ,<br style={{ display: 'block' }} className="sm:hidden" /> Not Guesswork
+            , Not Guesswork
           </span>
         </h1>
 

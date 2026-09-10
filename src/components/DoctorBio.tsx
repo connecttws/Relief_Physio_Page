@@ -1,22 +1,17 @@
 'use client';
 import React from 'react';
-import { CheckCircle2, GraduationCap, MapPin, Users } from 'lucide-react';
+import { CheckCircle2, GraduationCap, MapPin, Users, ArrowRight, Star } from 'lucide-react';
 
 const CREDENTIALS = [
-  { icon: GraduationCap, label: 'Qualified Physiotherapist (BPT/MPT)', color: '#00897B' },
-  { icon: Users, label: '10,000+ Patients Treated', color: '#E05A2B' },
-  { icon: MapPin, label: 'Clinic: Mayur Vihar, Delhi', color: '#7C3AED' },
+  { icon: GraduationCap, label: 'Qualified Physiotherapist (BPT/MPT)', color: '#00897B', bg: '#E0F2F1' },
+  { icon: Users, label: '10,000+ Patients Treated Successfully', color: '#E05A2B', bg: '#FFF3EE' },
+  { icon: MapPin, label: 'Clinic: Mayur Vihar, Delhi & Online Pan-India', color: '#7C3AED', bg: '#F3EDFF' },
 ];
 
 const SPECIALISATIONS = [
-  'Lower Back Pain',
-  'Cervical Spondylosis',
-  'Knee Osteoarthritis',
-  'Neck Pain & Stiffness',
-  'Sports Injuries',
-  'Post-Surgery Rehabilitation',
-  'Shoulder Pain',
-  'Sciatica',
+  'Lower Back Pain', 'Cervical Spondylosis', 'Knee Osteoarthritis',
+  'Neck Pain & Stiffness', 'Sports Injuries', 'Post-Surgery Rehab',
+  'Shoulder Pain', 'Sciatica',
 ];
 
 export default function DoctorBio() {
@@ -24,158 +19,102 @@ export default function DoctorBio() {
     <section
       id="doctor"
       style={{
-        background: '#fff',
-        paddingBlock: 'clamp(32px, 6vw, 88px)',
-        paddingInline: '16px',
+        background: '#F7F9FC',
+        paddingBlock: 'clamp(64px, 10vw, 100px)',
+        paddingInline: '24px',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
-        {/* Grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr',
-            gap: 'clamp(24px, 5vw, 52px)',
-            alignItems: 'center',
-          }}
-          className="doctor-grid"
-        >
-          {/* LEFT: Photo area */}
-          <div style={{ position: 'relative' }}>
-            {/* Photo card */}
+      {/* Background decoration */}
+      <div aria-hidden style={{ position:'absolute',top:0,right:0,width:'50%',height:'100%',background:'linear-gradient(to left,rgba(0,137,123,0.03),transparent)',pointerEvents:'none' }} />
+
+      <div style={{ maxWidth:'1120px',margin:'0 auto',position:'relative' }}>
+        <div className="doctor-grid" style={{ display:'grid',gridTemplateColumns:'1fr',gap:'clamp(32px,6vw,72px)',alignItems:'center' }}>
+
+          {/* ── LEFT: Photo card ── */}
+          <div style={{ position:'relative' }}>
+            {/* Main photo container */}
             <div
               style={{
-                background: 'linear-gradient(145deg, #E0F2F1 0%, #B2DFDB 100%)',
-                borderRadius: '24px',
-                height: '380px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                position: 'relative',
-                overflow: 'hidden',
+                background:'linear-gradient(145deg,#00897B 0%,#004D40 100%)',
+                borderRadius:'28px',
+                minHeight:'420px',
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'center',
+                position:'relative',
+                overflow:'hidden',
+                boxShadow:'0 24px 60px rgba(0,137,123,0.22)',
               }}
             >
-              {/* Placeholder avatar */}
-              <div
-                style={{
-                  width: '160px',
-                  height: '160px',
-                  borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #00897B, #004D40)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 16px 48px rgba(0,137,123,0.3)',
-                }}
-              >
-                <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Pattern overlay */}
+              <div aria-hidden style={{ position:'absolute',inset:0,backgroundImage:`radial-gradient(circle at 70% 30%, rgba(255,255,255,0.06) 0%, transparent 50%), radial-gradient(circle at 30% 70%, rgba(0,0,0,0.10) 0%, transparent 50%)`,pointerEvents:'none' }} />
+
+              {/* Avatar circle */}
+              <div style={{ width:'180px',height:'180px',borderRadius:'50%',background:'rgba(255,255,255,0.12)',border:'3px solid rgba(255,255,255,0.20)',display:'flex',alignItems:'center',justifyContent:'center',backdropFilter:'blur(4px)' }}>
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                   <circle cx="12" cy="7" r="4"/>
                 </svg>
               </div>
 
-              {/* Years badge */}
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '20px',
-                  right: '20px',
-                  background: '#fff',
-                  borderRadius: '14px',
-                  padding: '12px 16px',
-                  boxShadow: '0 4px 20px rgba(11,31,58,0.10)',
-                  textAlign: 'center',
-                  border: '1px solid #E2E8F0',
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "'Outfit', sans-serif",
-                    fontWeight: 900,
-                    fontSize: '1.6rem',
-                    color: '#00897B',
-                    lineHeight: 1,
-                  }}
-                >
-                  12+
+              {/* Floating name card — bottom */}
+              <div style={{ position:'absolute',bottom:0,left:0,right:0,background:'rgba(0,0,0,0.55)',backdropFilter:'blur(12px)',padding:'16px 24px',display:'flex',alignItems:'center',justifyContent:'space-between' }}>
+                <div>
+                  <div style={{ fontFamily:"'Outfit',sans-serif",fontWeight:800,fontSize:'1.1rem',color:'#fff' }}>Dr. Rahul</div>
+                  <div style={{ fontSize:'0.75rem',color:'rgba(255,255,255,0.60)',marginTop:'2px' }}>Physiotherapist</div>
                 </div>
-                <div style={{ fontSize: '0.7rem', color: '#64748B', fontWeight: 600, marginTop: '2px' }}>
-                  Years Exp.
+                <div style={{ display:'flex',alignItems:'center',gap:'6px',background:'rgba(255,255,255,0.12)',border:'1px solid rgba(255,255,255,0.20)',borderRadius:'10px',padding:'8px 14px' }}>
+                  <Star size={13} style={{ color:'#F59E0B' }} fill="#F59E0B" />
+                  <span style={{ fontSize:'0.85rem',fontWeight:700,color:'#fff' }}>4.0</span>
                 </div>
+              </div>
+
+              {/* Experience badge — top right */}
+              <div style={{ position:'absolute',top:'20px',right:'20px',background:'#fff',borderRadius:'16px',padding:'12px 16px',textAlign:'center',boxShadow:'0 8px 24px rgba(0,0,0,0.15)',border:'1px solid rgba(255,255,255,0.8)' }}>
+                <div style={{ fontFamily:"'Outfit',sans-serif",fontWeight:900,fontSize:'1.8rem',color:'#00897B',lineHeight:1 }}>12+</div>
+                <div style={{ fontSize:'0.68rem',color:'#64748B',fontWeight:600,marginTop:'3px',letterSpacing:'0.02em' }}>Years Exp.</div>
+              </div>
+
+              {/* Patients badge — top left */}
+              <div style={{ position:'absolute',top:'20px',left:'20px',background:'#E05A2B',borderRadius:'14px',padding:'10px 14px',textAlign:'center',boxShadow:'0 6px 20px rgba(224,90,43,0.35)' }}>
+                <div style={{ fontFamily:"'Outfit',sans-serif",fontWeight:900,fontSize:'1.2rem',color:'#fff',lineHeight:1 }}>10K+</div>
+                <div style={{ fontSize:'0.65rem',color:'rgba(255,255,255,0.85)',fontWeight:600,marginTop:'2px' }}>Patients</div>
               </div>
             </div>
           </div>
 
-          {/* RIGHT: Bio content */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          {/* ── RIGHT: Bio ── */}
+          <div style={{ display:'flex',flexDirection:'column',gap:'28px' }}>
             <div>
-              <p className="eyebrow" style={{ marginBottom: '12px' }}>
+              <span style={{ display:'inline-block',background:'#E0F2F1',color:'#00695C',fontSize:'0.72rem',fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase',padding:'5px 14px',borderRadius:'999px',border:'1px solid rgba(0,137,123,0.20)',marginBottom:'16px' }}>
                 Meet Your Physiotherapist
-              </p>
-              <h2
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontWeight: 800,
-                  fontSize: 'clamp(1.7rem, 4vw, 2.4rem)',
-                  color: '#0B1F3A',
-                  letterSpacing: '-0.03em',
-                  lineHeight: 1.2,
-                }}
-              >
+              </span>
+              <h2 style={{ fontFamily:"'Outfit',sans-serif",fontWeight:900,fontSize:'clamp(1.8rem,4vw,2.6rem)',color:'#0B1F3A',letterSpacing:'-0.03em',lineHeight:1.15,marginBottom:'4px' }}>
                 Dr. Rahul
               </h2>
-              <div className="divider" style={{ marginTop: '12px' }} />
+              <div style={{ width:'48px',height:'4px',background:'linear-gradient(90deg,#00897B,#00695C)',borderRadius:'999px',marginTop:'10px' }} />
             </div>
 
-            <p
-              style={{
-                fontSize: '0.95rem',
-                color: '#475569',
-                lineHeight: 1.8,
-              }}
-            >
+            <p style={{ fontSize:'0.97rem',color:'#475569',lineHeight:1.85 }}>
               Dr. Rahul is a qualified physiotherapist with over{' '}
-              <strong style={{ color: '#1E293B' }}>12 years of clinical experience</strong> treating
-              spine, neck and knee pain. He has helped{' '}
-              <strong style={{ color: '#1E293B' }}>10,000+ patients</strong> recover from chronic
-              musculoskeletal conditions through personalised, evidence-based physiotherapy — both
-              in-clinic at Mayur Vihar, Delhi and online across India.
+              <strong style={{ color:'#1E293B',fontWeight:600 }}>12 years of clinical experience</strong>{' '}
+              treating spine, neck and knee pain. He has helped{' '}
+              <strong style={{ color:'#1E293B',fontWeight:600 }}>10,000+ patients</strong>{' '}
+              recover from chronic musculoskeletal conditions through personalised, evidence-based physiotherapy — both in-clinic at Mayur Vihar, Delhi and online across India.
             </p>
 
-            {/* Credential pills */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {/* Credentials */}
+            <div style={{ display:'flex',flexDirection:'column',gap:'10px' }}>
               {CREDENTIALS.map(cred => {
                 const Icon = cred.icon;
                 return (
-                  <div
-                    key={cred.label}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      padding: '12px 16px',
-                      background: '#F7F9FC',
-                      border: '1px solid #E2E8F0',
-                      borderRadius: '12px',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: '36px',
-                        height: '36px',
-                        borderRadius: '10px',
-                        background: `${cred.color}15`,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0,
-                      }}
-                    >
-                      <Icon size={18} color={cred.color} />
+                  <div key={cred.label} style={{ display:'flex',alignItems:'center',gap:'14px',padding:'14px 18px',background:'#fff',border:'1px solid #E2E8F0',borderRadius:'14px',boxShadow:'0 1px 4px rgba(11,31,58,0.04)' }}>
+                    <div style={{ width:'40px',height:'40px',borderRadius:'12px',background:cred.bg,display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0 }}>
+                      <Icon size={20} color={cred.color} />
                     </div>
-                    <span style={{ fontWeight: 600, fontSize: '0.88rem', color: '#1E293B' }}>
-                      {cred.label}
-                    </span>
+                    <span style={{ fontWeight:600,fontSize:'0.9rem',color:'#1E293B' }}>{cred.label}</span>
                   </div>
                 );
               })}
@@ -183,54 +122,32 @@ export default function DoctorBio() {
 
             {/* Specialisations */}
             <div>
-              <p
-                style={{
-                  fontSize: '0.78rem',
-                  fontWeight: 700,
-                  color: '#94A3B8',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  marginBottom: '12px',
-                }}
-              >
+              <p style={{ fontSize:'0.72rem',fontWeight:700,color:'#94A3B8',letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:'12px' }}>
                 Conditions Treated
               </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              <div style={{ display:'flex',flexWrap:'wrap',gap:'8px' }}>
                 {SPECIALISATIONS.map(s => (
-                  <span
-                    key={s}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '5px',
-                      background: '#F0FDF4',
-                      border: '1px solid #BBF7D0',
-                      color: '#166534',
-                      borderRadius: '999px',
-                      padding: '4px 12px',
-                      fontSize: '0.78rem',
-                      fontWeight: 500,
-                    }}
-                  >
-                    <CheckCircle2 size={11} />
-                    {s}
+                  <span key={s} style={{ display:'inline-flex',alignItems:'center',gap:'5px',background:'#F0FDF4',border:'1px solid #BBF7D0',color:'#166534',borderRadius:'999px',padding:'5px 13px',fontSize:'0.78rem',fontWeight:500 }}>
+                    <CheckCircle2 size={11} /> {s}
                   </span>
                 ))}
               </div>
             </div>
 
-            <a href="#book" className="btn btn-cta" id="doctor-cta" style={{ alignSelf: 'flex-start' }}>
-              Book a Session with Dr. Rahul →
+            <a href="#book" id="doctor-cta" style={{ display:'inline-flex',alignItems:'center',gap:'8px',alignSelf:'flex-start',background:'linear-gradient(135deg,#00897B,#00695C)',color:'#fff',fontFamily:"'Outfit',sans-serif",fontWeight:700,fontSize:'0.95rem',padding:'14px 28px',borderRadius:'999px',textDecoration:'none',boxShadow:'0 8px 28px rgba(0,137,123,0.28)',transition:'transform 0.2s,box-shadow 0.2s' }}
+              onMouseEnter={e=>{(e.currentTarget as HTMLAnchorElement).style.transform='translateY(-2px)';(e.currentTarget as HTMLAnchorElement).style.boxShadow='0 14px 36px rgba(0,137,123,0.38)';}}
+              onMouseLeave={e=>{(e.currentTarget as HTMLAnchorElement).style.transform='translateY(0)';(e.currentTarget as HTMLAnchorElement).style.boxShadow='0 8px 28px rgba(0,137,123,0.28)';}}
+            >
+              Book a Session with Dr. Rahul <ArrowRight size={16} />
             </a>
           </div>
+
         </div>
       </div>
 
       <style>{`
         @media (min-width: 900px) {
-          .doctor-grid {
-            grid-template-columns: 1fr 1.4fr !important;
-          }
+          .doctor-grid { grid-template-columns: 1fr 1.3fr !important; }
         }
       `}</style>
     </section>
