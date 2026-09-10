@@ -15,7 +15,7 @@ import Footer from '@/components/Footer';
 
 export default function ReliefPhysioPage() {
   return (
-    <main>
+    <main className="w-full max-w-[100vw] overflow-x-hidden min-h-[100dvh]">
       <OfferBanner />
       <Navbar />
       <HeroSection />

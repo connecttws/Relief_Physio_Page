@@ -113,7 +113,7 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
           <a
             href="tel:+91"
             aria-label="Call Dr. Rahul"
@@ -121,12 +121,13 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '38px',
-              height: '38px',
+              width: '36px',
+              height: '36px',
               borderRadius: '50%',
               border: '1.5px solid #E2E8F0',
               color: '#475569',
               transition: 'all 0.2s',
+              flexShrink: 0,
             }}
             onMouseEnter={e => {
               e.currentTarget.style.borderColor = '#00897B';
@@ -137,12 +138,12 @@ export default function Navbar() {
               e.currentTarget.style.color = '#475569';
             }}
           >
-            <Phone size={16} />
+            <Phone size={15} />
           </a>
           <a
             href="#book"
-            className="btn btn-cta"
-            style={{ padding: '10px 22px', fontSize: '0.88rem' }}
+            className="btn btn-cta desktop-nav-btn"
+            style={{ padding: '8px 18px', fontSize: '0.82rem' }}
           >
             Book Consultation
           </a>
@@ -159,6 +160,7 @@ export default function Navbar() {
               cursor: 'pointer',
               color: '#0B1F3A',
               padding: '4px',
+              flexShrink: 0,
             }}
             className="mobile-menu-btn"
           >
@@ -213,6 +215,9 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: flex !important; }
+        }
+        @media (max-width: 540px) {
+          .desktop-nav-btn { display: none !important; }
         }
       `}</style>
     </nav>

@@ -48,7 +48,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable}`}
     >
-      <body className="min-h-screen overflow-x-hidden">
+      <body className="min-h-[100dvh] w-full max-w-[100vw] overflow-x-hidden">
         {children}
       </body>
     </html>
