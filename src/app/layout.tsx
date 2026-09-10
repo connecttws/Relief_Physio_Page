@@ -6,27 +6,36 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
+  weight: ["600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Rahul's Relief Physiotherapy | Permanent Root-Cause Spine, Knee & Neck Pain Relief",
-  description: "End recurring spine, knee, and neck pain without surgery or lifelong painkillers. Dr. Rahul's proven 4-step personalised treatment approach has helped 10,000+ patients regain active, pain-free mobility.",
+  title: "Dr. Rahul | Physiotherapy for Spine, Knee & Neck Pain — Mayur Vihar, Delhi & Online",
+  description:
+    "Get a personalised physiotherapy assessment from Dr. Rahul — 12+ years, 10,000+ patients treated. In-clinic in Mayur Vihar, Delhi or online Pan-India. Real diagnosis, no guesswork.",
   keywords: [
-    "physiotherapy",
+    "physiotherapist Mayur Vihar",
+    "physiotherapy Delhi",
     "spine pain treatment",
-    "knee pain relief",
-    "neck pain physiotherapist",
+    "knee pain physiotherapy",
+    "neck pain relief",
+    "online physiotherapy India",
     "Dr Rahul physiotherapist",
-    "Relief Physiotherapy",
-    "root cause pain treatment",
-    "manual therapy"
+    "back pain specialist Delhi",
   ],
+  openGraph: {
+    title: "Dr. Rahul | Physiotherapy — Spine, Knee & Neck Pain",
+    description:
+      "Personalised physiotherapy in Mayur Vihar, Delhi & online. 10,000+ patients treated. Book your consultation today.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -35,8 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth`}>
-      <body className="min-h-[100dvh] overflow-x-hidden bg-[#F8FAFC] text-slate-900 antialiased selection:bg-[#0D9488] selection:text-white">
+    <html
+      lang="en"
+      className={`${inter.variable} ${outfit.variable}`}
+    >
+      <body className="min-h-screen overflow-x-hidden">
         {children}
       </body>
     </html>

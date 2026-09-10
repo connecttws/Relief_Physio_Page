@@ -1,168 +1,381 @@
+'use client';
 import React from 'react';
-import { Star, CheckCircle2, ShieldCheck, Users, Award, Stethoscope, ArrowRight, Sparkles, Activity } from 'lucide-react';
+import { CheckCircle2, MapPin, Laptop } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative py-12 md:py-20 lg:py-24 bg-gradient-to-b from-slate-50 via-[#F0FDF4]/40 to-white overflow-hidden">
-      
-      {/* Background Decor Spheres */}
-      <div className="absolute top-10 right-10 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+    <section
+      id="hero"
+      style={{
+        background: 'linear-gradient(160deg, #F7F9FC 0%, #E8F5E9 40%, #F7F9FC 100%)',
+        paddingBlock: 'clamp(60px, 10vw, 100px)',
+        paddingInline: '24px',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Decorative background blobs */}
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          top: '-80px',
+          right: '-80px',
+          width: '420px',
+          height: '420px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(0,137,123,0.10) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          bottom: '-60px',
+          left: '-60px',
+          width: '320px',
+          height: '320px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(224,90,43,0.07) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Main Hero 2-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          
-          {/* Left Column (Copy + CTAs + Reassurance) */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            
-            {/* Eyebrow Tag */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-bold text-[#064E3B] bg-emerald-100/80 border border-emerald-300/60 shadow-xs">
-              <Sparkles className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>Especially for Busy Professionals, Business Owners, Parents &amp; Older Adults with Spine, Knee or Neck Pain</span>
-            </div>
+      <div
+        style={{
+          maxWidth: '1120px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          gap: '48px',
+          alignItems: 'center',
+        }}
+        className="hero-grid"
+      >
+        {/* ── LEFT: Copy ── */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
 
-            {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.15]">
-              Overcome Spine, Knee &amp; Neck Pain — <span className="gradient-text underline decoration-emerald-500/40 underline-offset-8">With Real Physiotherapy</span>, Not Guesswork
-            </h1>
-
-            {/* Subheadline */}
-            <p className="text-base sm:text-lg text-slate-600 font-medium leading-relaxed max-w-2xl">
-              Get a personalised assessment from <strong>Dr. Rahul</strong>, a qualified physiotherapist — in-clinic in <strong>Mayur Vihar, Delhi</strong> or from the comfort of your home <strong>online, Pan-India</strong>.
-            </p>
-
-            {/* Rating Badge */}
-            <div className="inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-amber-50/90 border border-amber-200/80 shadow-xs">
-              <div className="flex text-amber-500">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <span className="text-xs sm:text-sm font-bold text-amber-950">
-                4.0 | 1430+ Reviews on Google
-              </span>
-            </div>
-
-            {/* CTA + Reassurance Block */}
-            <div className="pt-2 space-y-3">
-              <div>
-                <a
-                  href="#consultation"
-                  className="btn-primary-cta w-full sm:w-auto text-base sm:text-lg group"
-                >
-                  <span>Book Your Consultation →</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-
-              {/* Reassurance Line Under CTA */}
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 flex-wrap">
-                <span className="flex items-center gap-1 text-emerald-700">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  Real diagnosis
-                </span>
-                <span>·</span>
-                <span className="flex items-center gap-1 text-emerald-700">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  Personalised treatment plan
-                </span>
-                <span>·</span>
-                <span className="flex items-center gap-1 text-emerald-700">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  No unnecessary surgery-first approach
-                </span>
-              </div>
-            </div>
-
+          {/* Eyebrow */}
+          <div className="badge badge-teal" style={{ alignSelf: 'flex-start' }}>
+            <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#00897B', display: 'inline-block', flexShrink: 0 }} />
+            For Busy Professionals · Parents · Older Adults with Spine, Knee or Neck Pain
           </div>
 
-          {/* Right Column (Hero Visual Showcase Card) */}
-          <div className="lg:col-span-5 relative">
-            <div className="glass-card p-3 rounded-3xl border border-slate-200/90 shadow-2xl relative group">
-              <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 aspect-[16/10] sm:aspect-[16/9]">
-                <img
-                  src="/images/dr_rahul_assessment.jpg"
-                  alt="Dr Rahul Physiotherapy Assessment"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+          {/* Headline */}
+          <h1
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontWeight: 800,
+              fontSize: 'clamp(2rem, 5vw, 3.2rem)',
+              color: '#0B1F3A',
+              letterSpacing: '-0.03em',
+              lineHeight: 1.15,
+            }}
+          >
+            Overcome Spine, Knee &amp; Neck Pain —{' '}
+            <span
+              style={{
+                color: '#00897B',
+                background: 'linear-gradient(135deg, #00897B, #004D40)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              With Real Physiotherapy
+            </span>
+            , Not Guesswork
+          </h1>
 
-                {/* Overlaid Badge on Image */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/80 flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
-                      <Stethoscope className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-extrabold text-slate-900">Dr. Rahul Assessment</div>
-                      <div className="text-[10px] text-slate-500">In-Clinic Mayur Vihar &amp; Tele-Physio</div>
-                    </div>
-                  </div>
-                  <span className="px-2.5 py-1 rounded-md bg-emerald-500 text-white text-[10px] font-black uppercase tracking-wider">
-                    Verified
-                  </span>
+          {/* Subheadline */}
+          <p
+            style={{
+              fontSize: '1.05rem',
+              color: '#475569',
+              lineHeight: 1.75,
+              maxWidth: '580px',
+              fontWeight: 400,
+            }}
+          >
+            Get a personalised assessment from{' '}
+            <strong style={{ color: '#1E293B', fontWeight: 600 }}>Dr. Rahul</strong>,
+            a qualified physiotherapist —{' '}
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: 500 }}>
+              <MapPin size={14} style={{ color: '#00897B', flexShrink: 0 }} />
+              In-clinic in Mayur Vihar, Delhi
+            </span>{' '}
+            or{' '}
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: 500 }}>
+              <Laptop size={14} style={{ color: '#00897B', flexShrink: 0 }} />
+              online, Pan-India
+            </span>
+            .
+          </p>
+
+          {/* Google Rating Badge */}
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '12px',
+              background: '#fff',
+              border: '1px solid #FDE68A',
+              borderRadius: '12px',
+              padding: '10px 16px',
+              alignSelf: 'flex-start',
+              boxShadow: '0 2px 12px rgba(245,158,11,0.12)',
+            }}
+          >
+            <div style={{ display: 'flex', gap: '2px' }}>
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill={i < 4 ? '#F59E0B' : '#D1D5DB'}>
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <div>
+              <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#1E293B', lineHeight: 1.2 }}>
+                4.0 · 1,430+ Reviews
+              </div>
+              <div style={{ fontSize: '0.72rem', color: '#94A3B8', fontWeight: 500 }}>
+                on Google
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Block */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <a href="#book" className="btn btn-cta btn-cta-lg" id="hero-cta-primary">
+                Book Your Consultation →
+              </a>
+              <a href="#process" className="btn btn-outline" id="hero-cta-secondary">
+                How It Works
+              </a>
+            </div>
+
+            {/* Reassurance chips */}
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '8px',
+                marginTop: '4px',
+              }}
+            >
+              {[
+                'Real diagnosis',
+                'Personalised treatment plan',
+                'No surgery-first approach',
+              ].map(item => (
+                <span
+                  key={item}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                    fontSize: '0.78rem',
+                    fontWeight: 500,
+                    color: '#00695C',
+                    background: '#E0F2F1',
+                    borderRadius: '999px',
+                    padding: '4px 12px',
+                  }}
+                >
+                  <CheckCircle2 size={12} />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ── RIGHT: Visual Card ── */}
+        <div style={{ position: 'relative' }} className="hero-visual">
+          {/* Main card */}
+          <div
+            style={{
+              background: '#fff',
+              borderRadius: '24px',
+              border: '1px solid #E2E8F0',
+              boxShadow: '0 20px 60px rgba(11,31,58,0.10)',
+              overflow: 'hidden',
+              position: 'relative',
+            }}
+          >
+            {/* Image area */}
+            <div
+              style={{
+                height: '320px',
+                background: 'linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+              }}
+            >
+              {/* Placeholder visual for doctor image */}
+              <div
+                style={{
+                  width: '140px',
+                  height: '140px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #00897B, #004D40)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 12px 40px rgba(0,137,123,0.25)',
+                }}
+              >
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+
+              {/* Floating badge top-right */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '16px',
+                  right: '16px',
+                  background: '#fff',
+                  border: '1px solid #E2E8F0',
+                  borderRadius: '12px',
+                  padding: '8px 12px',
+                  boxShadow: '0 4px 16px rgba(11,31,58,0.08)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                }}
+              >
+                <span
+                  style={{
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    background: '#10B981',
+                    display: 'block',
+                    boxShadow: '0 0 0 3px rgba(16,185,129,0.2)',
+                  }}
+                />
+                <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#1E293B' }}>
+                  Accepting Patients
+                </span>
+              </div>
+
+              {/* Non-surgical badge */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '16px',
+                  left: '16px',
+                  background: '#FEF3C7',
+                  border: '1px solid #FDE68A',
+                  borderRadius: '10px',
+                  padding: '6px 12px',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  color: '#92400E',
+                  letterSpacing: '0.03em',
+                }}
+              >
+                🛡 Non-Surgical Focus
+              </div>
+            </div>
+
+            {/* Card info strip */}
+            <div
+              style={{
+                padding: '20px 24px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                borderTop: '1px solid #F1F5F9',
+              }}
+            >
+              <div>
+                <div style={{ fontWeight: 700, fontSize: '1rem', color: '#0B1F3A' }}>
+                  Dr. Rahul
+                </div>
+                <div style={{ fontSize: '0.8rem', color: '#64748B', marginTop: '2px' }}>
+                  Physiotherapist · 12+ Years Experience
                 </div>
               </div>
-
-              {/* Floating Guarantee Sticker Tag */}
-              <div className="absolute -top-4 -right-4 sticker-tag px-3.5 py-1.5 rounded-full text-xs font-black flex items-center gap-1.5 z-10 animate-bounce">
-                <ShieldCheck className="w-4 h-4 text-amber-700" />
-                <span>100% Non-Surgical Focus</span>
-              </div>
+              <a
+                href="#book"
+                style={{
+                  background: '#00897B',
+                  color: '#fff',
+                  borderRadius: '10px',
+                  padding: '8px 16px',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = '#00695C')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#00897B')}
+              >
+                Book Now
+              </a>
             </div>
           </div>
 
-        </div>
-
-        {/* 3. Section 3: Trust Counters */}
-        <div className="mt-16 sm:mt-20 pt-10 border-t border-slate-200/80">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            
-            {/* Stat 1 */}
-            <div className="glass-card hover-lift p-6 rounded-2xl bg-white border border-slate-200/80 shadow-md text-center flex flex-col items-center justify-center">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center mb-3">
-                <Users className="w-6 h-6" />
-              </div>
-              <div className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
-                10000+
-              </div>
-              <div className="text-xs sm:text-sm font-bold text-slate-600 mt-1">
-                Patients Treated Successfully
-              </div>
+          {/* Floating stat pill */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '-16px',
+              left: '-16px',
+              background: '#fff',
+              borderRadius: '16px',
+              padding: '12px 18px',
+              border: '1px solid #E2E8F0',
+              boxShadow: '0 8px 28px rgba(11,31,58,0.10)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+            className="floating-stat"
+          >
+            <div
+              style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #00897B, #004D40)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                fontSize: '1.1rem',
+                fontWeight: 800,
+              }}
+            >
+              10K
             </div>
-
-            {/* Stat 2 */}
-            <div className="glass-card hover-lift p-6 rounded-2xl bg-white border border-slate-200/80 shadow-md text-center flex flex-col items-center justify-center">
-              <div className="w-12 h-12 rounded-2xl bg-teal-100 text-teal-800 flex items-center justify-center mb-3">
-                <Award className="w-6 h-6" />
+            <div>
+              <div style={{ fontWeight: 700, fontSize: '0.88rem', color: '#0B1F3A', lineHeight: 1.2 }}>
+                Patients Treated
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
-                12+ Years
-              </div>
-              <div className="text-xs sm:text-sm font-bold text-slate-600 mt-1">
-                Of Physiotherapy Practice
-              </div>
+              <div style={{ fontSize: '0.72rem', color: '#94A3B8' }}>Successfully</div>
             </div>
-
-            {/* Stat 3 */}
-            <div className="glass-card hover-lift p-6 rounded-2xl bg-white border border-slate-200/80 shadow-md text-center flex flex-col items-center justify-center">
-              <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center mb-3">
-                <Activity className="w-6 h-6" />
-              </div>
-              <div className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
-                25+ Conditions
-              </div>
-              <div className="text-xs sm:text-sm font-bold text-slate-600 mt-1">
-                Treated (Back, Neck, Knee, Sports Injury, Post-Surgery Rehab, etc.)
-              </div>
-            </div>
-
           </div>
         </div>
-
       </div>
+
+      <style>{`
+        @media (min-width: 900px) {
+          .hero-grid {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .floating-stat { display: none; }
+        }
+      `}</style>
     </section>
   );
 }

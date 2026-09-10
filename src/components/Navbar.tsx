@@ -1,66 +1,220 @@
-import React from 'react';
-import { MapPin, Phone, ShieldCheck, Calendar, Sparkles } from 'lucide-react';
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Phone } from 'lucide-react';
+
+const NAV_LINKS = [
+  { label: 'About', href: '#doctor' },
+  { label: 'Treatment', href: '#process' },
+  { label: 'Reviews', href: '#reviews' },
+  { label: 'FAQ', href: '#faq' },
+];
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const navStyle: React.CSSProperties = {
+    position: 'sticky',
+    top: 0,
+    zIndex: 100,
+    background: scrolled ? 'rgba(255,255,255,0.97)' : '#fff',
+    borderBottom: `1px solid ${scrolled ? '#E2E8F0' : '#F1F5F9'}`,
+    backdropFilter: scrolled ? 'blur(12px)' : 'none',
+    WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+    boxShadow: scrolled ? '0 1px 20px rgba(11,31,58,0.07)' : 'none',
+    transition: 'all 0.3s ease',
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-      
-      {/* 1. Top Offer Banner */}
-      <div className="bg-gradient-to-r from-[#022C22] via-[#064E3B] to-[#022C22] text-white py-2.5 px-4 text-center text-xs sm:text-sm font-semibold tracking-wide">
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
-          <span className="pulse-dot"></span>
-          <span className="text-emerald-300 uppercase tracking-widest font-extrabold text-[11px]">Book Your Consultation:</span>
-          <span className="text-slate-100">
-            In-Clinic in <strong className="text-emerald-300 underline font-bold">Mayur Vihar, Delhi</strong> · Also Available <strong className="text-amber-300 font-bold">Online, Pan-India</strong>
+    <nav style={navStyle} role="navigation" aria-label="Main navigation">
+      <div
+        style={{
+          maxWidth: '1120px',
+          margin: '0 auto',
+          padding: '0 24px',
+          height: '68px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        {/* Logo */}
+        <a href="#" style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+          <span
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontWeight: 800,
+              fontSize: '1.15rem',
+              color: '#0B1F3A',
+              letterSpacing: '-0.03em',
+            }}
+          >
+            Dr. Rahul
           </span>
-          <a
-            href="#consultation"
-            className="ml-2 inline-flex items-center gap-1 bg-amber-400 hover:bg-amber-300 text-slate-950 px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase tracking-wider transition-colors shadow-sm"
+          <span
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 500,
+              fontSize: '0.65rem',
+              color: '#00897B',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+            }}
           >
-            <Sparkles className="w-3 h-3" /> Book Now
+            Physiotherapy
+          </span>
+        </a>
+
+        {/* Desktop Nav Links */}
+        <ul
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            listStyle: 'none',
+            margin: 0,
+            padding: 0,
+          }}
+          className="desktop-nav"
+        >
+          {NAV_LINKS.map(link => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 500,
+                  fontSize: '0.9rem',
+                  color: '#475569',
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  transition: 'color 0.2s, background 0.2s',
+                  display: 'block',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = '#00897B';
+                  e.currentTarget.style.background = '#E0F2F1';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = '#475569';
+                  e.currentTarget.style.background = 'transparent';
+                }}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <a
+            href="tel:+91"
+            aria-label="Call Dr. Rahul"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '38px',
+              height: '38px',
+              borderRadius: '50%',
+              border: '1.5px solid #E2E8F0',
+              color: '#475569',
+              transition: 'all 0.2s',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = '#00897B';
+              e.currentTarget.style.color = '#00897B';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = '#E2E8F0';
+              e.currentTarget.style.color = '#475569';
+            }}
+          >
+            <Phone size={16} />
           </a>
+          <a
+            href="#book"
+            className="btn btn-cta"
+            style={{ padding: '10px 22px', fontSize: '0.88rem' }}
+          >
+            Book Consultation
+          </a>
+
+          {/* Mobile hamburger */}
+          <button
+            aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            style={{
+              display: 'none',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: '#0B1F3A',
+              padding: '4px',
+            }}
+            className="mobile-menu-btn"
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
 
-      {/* Main Glass Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
-        
-        {/* Brand Logo & Name */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#00984B] to-[#064E3B] text-white flex items-center justify-center font-black text-xl shadow-md shadow-emerald-600/20 border border-emerald-400/30">
-            DR
-          </div>
-          <div>
-            <div className="text-base sm:text-lg font-black text-slate-900 leading-none tracking-tight">
-              Dr. Rahul <span className="text-[#00984B]">Physiotherapy</span>
-            </div>
-            <div className="text-[11px] font-bold text-slate-500 flex items-center gap-1.5 mt-0.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 inline" />
-              <span>Spine, Knee &amp; Joint Rehabilitation</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Desktop Quick Info & CTA */}
-        <div className="hidden md:flex items-center gap-6 text-xs">
-          <div className="flex items-center gap-2 text-slate-700 font-medium bg-slate-100/80 px-3.5 py-2 rounded-xl border border-slate-200">
-            <MapPin className="w-4 h-4 text-emerald-600 shrink-0" />
-            <div>
-              <div className="font-bold text-slate-900 text-[11px]">Mayur Vihar, Delhi</div>
-              <div className="text-[10px] text-slate-500">In-Clinic &amp; Online</div>
-            </div>
-          </div>
-
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div
+          style={{
+            position: 'absolute',
+            top: '68px',
+            left: 0,
+            right: 0,
+            background: '#fff',
+            borderBottom: '1px solid #E2E8F0',
+            padding: '12px 24px 20px',
+            boxShadow: '0 8px 24px rgba(11,31,58,0.10)',
+          }}
+        >
+          {NAV_LINKS.map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              style={{
+                display: 'block',
+                padding: '12px 0',
+                fontWeight: 500,
+                fontSize: '1rem',
+                color: '#1E293B',
+                borderBottom: '1px solid #F1F5F9',
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
           <a
-            href="#consultation"
-            className="btn-primary-cta !py-2.5 !px-5 !text-xs uppercase tracking-wider"
+            href="#book"
+            onClick={() => setMobileOpen(false)}
+            className="btn btn-cta"
+            style={{ width: '100%', marginTop: '16px', justifyContent: 'center' }}
           >
-            <Calendar className="w-4 h-4" />
-            <span>Book Consultation</span>
+            Book Consultation
           </a>
         </div>
+      )}
 
-      </div>
-    </header>
+      <style>{`
+        @media (max-width: 768px) {
+          .desktop-nav { display: none !important; }
+          .mobile-menu-btn { display: flex !important; }
+        }
+      `}</style>
+    </nav>
   );
 }

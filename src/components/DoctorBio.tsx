@@ -1,126 +1,238 @@
+'use client';
 import React from 'react';
-import { Award, CheckCircle2, MapPin, Globe, UserCheck, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, GraduationCap, MapPin, Users } from 'lucide-react';
+
+const CREDENTIALS = [
+  { icon: GraduationCap, label: 'Qualified Physiotherapist (BPT/MPT)', color: '#00897B' },
+  { icon: Users, label: '10,000+ Patients Treated', color: '#E05A2B' },
+  { icon: MapPin, label: 'Clinic: Mayur Vihar, Delhi', color: '#7C3AED' },
+];
+
+const SPECIALISATIONS = [
+  'Lower Back Pain',
+  'Cervical Spondylosis',
+  'Knee Osteoarthritis',
+  'Neck Pain & Stiffness',
+  'Sports Injuries',
+  'Post-Surgery Rehabilitation',
+  'Shoulder Pain',
+  'Sciatica',
+];
 
 export default function DoctorBio() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-950 via-[#064E3B] to-[#022C22] text-white relative overflow-hidden">
-      
-      {/* Background ambient radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section
+      id="doctor"
+      style={{
+        background: '#fff',
+        paddingBlock: 'clamp(64px, 10vw, 96px)',
+        paddingInline: '24px',
+      }}
+    >
+      <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+        {/* Grid */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gap: '52px',
+            alignItems: 'center',
+          }}
+          className="doctor-grid"
+        >
+          {/* LEFT: Photo area */}
+          <div style={{ position: 'relative' }}>
+            {/* Photo card */}
+            <div
+              style={{
+                background: 'linear-gradient(145deg, #E0F2F1 0%, #B2DFDB 100%)',
+                borderRadius: '24px',
+                height: '380px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+            >
+              {/* Placeholder avatar */}
+              <div
+                style={{
+                  width: '160px',
+                  height: '160px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #00897B, #004D40)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 16px 48px rgba(0,137,123,0.3)',
+                }}
+              >
+                <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/90 border border-emerald-500/40 mb-3 shadow-inner">
-            <UserCheck className="w-3.5 h-3.5" /> Clinical Lead &amp; Expert
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">
-            Meet <span className="text-emerald-400 underline decoration-emerald-500/50 underline-offset-8">Dr. Rahul</span>
-          </h2>
-          <p className="mt-4 text-base sm:text-lg text-emerald-100/80 font-medium">
-            Qualified Physiotherapist &amp; Spine Rehabilitation Specialist
-          </p>
-        </div>
-
-        {/* Doctor Bio Card */}
-        <div className="max-w-5xl mx-auto bg-slate-900/95 rounded-3xl border border-emerald-500/30 shadow-2xl p-6 sm:p-10 backdrop-blur-md">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            {/* Image Column */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-500/30 group">
-                <img
-                  src="/storage/herobanners/BmDEAxPn0Rg5QObeVOv1pQbDAMaq6oUf24HtnqrT.jpg"
-                  alt="Dr. Rahul - Lead Physiotherapist"
-                  className="w-full h-80 sm:h-96 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                
-                {/* Overlay Badge */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-900/90 border border-emerald-500/30 backdrop-blur-sm">
-                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
-                    <Award className="w-4 h-4 text-amber-400" />
-                    <span>12+ Years of Physiotherapy Practice</span>
-                  </div>
+              {/* Years badge */}
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: '20px',
+                  right: '20px',
+                  background: '#fff',
+                  borderRadius: '14px',
+                  padding: '12px 16px',
+                  boxShadow: '0 4px 20px rgba(11,31,58,0.10)',
+                  textAlign: 'center',
+                  border: '1px solid #E2E8F0',
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontWeight: 900,
+                    fontSize: '1.6rem',
+                    color: '#00897B',
+                    lineHeight: 1,
+                  }}
+                >
+                  12+
+                </div>
+                <div style={{ fontSize: '0.7rem', color: '#64748B', fontWeight: 600, marginTop: '2px' }}>
+                  Years Exp.
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Content Column */}
-            <div className="lg:col-span-7 space-y-6">
-              <div>
-                <div className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-extrabold uppercase tracking-wider mb-2 border border-emerald-500/30">
-                  Qualified Physiotherapist
-                </div>
-
-                <h3 className="text-xl sm:text-2xl font-black text-white leading-tight mb-3">
-                  Dedicated to Solving Chronic Spine, Knee &amp; Joint Pain
-                </h3>
-
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Dr Rahul is a qualified physiotherapist with <strong>12+ years of experience</strong> treating chronic spine, neck and knee pain. He has helped <strong>10,000+ patients</strong> recover from chronic spine, neck and knee pain through personalised, evidence-based physiotherapy — both in-clinic in <strong>Mayur Vihar, Delhi</strong> and <strong>online Pan-India</strong>.
-                </p>
-              </div>
-
-              {/* Clinic Availability Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-slate-800/80 border border-emerald-500/20 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] text-slate-400 font-medium">In-Clinic Consultations</div>
-                    <div className="text-xs sm:text-sm font-bold text-white">Mayur Vihar, Delhi</div>
-                  </div>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-slate-800/80 border border-emerald-500/20 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0">
-                    <Globe className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] text-slate-400 font-medium">Online Tele-Physio</div>
-                    <div className="text-xs sm:text-sm font-bold text-white">Pan-India Access</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Core Features */}
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-300 pt-2">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Personalised assessment &amp; root cause identification</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Hands-on manual therapy &amp; targeted joint exercises</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Long-term maintenance roadmap so pain doesn&apos;t return</span>
-                </li>
-              </ul>
+          {/* RIGHT: Bio content */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div>
+              <p className="eyebrow" style={{ marginBottom: '12px' }}>
+                Meet Your Physiotherapist
+              </p>
+              <h2
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontWeight: 800,
+                  fontSize: 'clamp(1.7rem, 4vw, 2.4rem)',
+                  color: '#0B1F3A',
+                  letterSpacing: '-0.03em',
+                  lineHeight: 1.2,
+                }}
+              >
+                Dr. Rahul
+              </h2>
+              <div className="divider" style={{ marginTop: '12px' }} />
             </div>
 
+            <p
+              style={{
+                fontSize: '0.95rem',
+                color: '#475569',
+                lineHeight: 1.8,
+              }}
+            >
+              Dr. Rahul is a qualified physiotherapist with over{' '}
+              <strong style={{ color: '#1E293B' }}>12 years of clinical experience</strong> treating
+              spine, neck and knee pain. He has helped{' '}
+              <strong style={{ color: '#1E293B' }}>10,000+ patients</strong> recover from chronic
+              musculoskeletal conditions through personalised, evidence-based physiotherapy — both
+              in-clinic at Mayur Vihar, Delhi and online across India.
+            </p>
+
+            {/* Credential pills */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              {CREDENTIALS.map(cred => {
+                const Icon = cred.icon;
+                return (
+                  <div
+                    key={cred.label}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      padding: '12px 16px',
+                      background: '#F7F9FC',
+                      border: '1px solid #E2E8F0',
+                      borderRadius: '12px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '10px',
+                        background: `${cred.color}15`,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Icon size={18} color={cred.color} />
+                    </div>
+                    <span style={{ fontWeight: 600, fontSize: '0.88rem', color: '#1E293B' }}>
+                      {cred.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Specialisations */}
+            <div>
+              <p
+                style={{
+                  fontSize: '0.78rem',
+                  fontWeight: 700,
+                  color: '#94A3B8',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  marginBottom: '12px',
+                }}
+              >
+                Conditions Treated
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {SPECIALISATIONS.map(s => (
+                  <span
+                    key={s}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '5px',
+                      background: '#F0FDF4',
+                      border: '1px solid #BBF7D0',
+                      color: '#166534',
+                      borderRadius: '999px',
+                      padding: '4px 12px',
+                      fontSize: '0.78rem',
+                      fontWeight: 500,
+                    }}
+                  >
+                    <CheckCircle2 size={11} />
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <a href="#book" className="btn btn-cta" id="doctor-cta" style={{ alignSelf: 'flex-start' }}>
+              Book a Session with Dr. Rahul →
+            </a>
           </div>
         </div>
-
-        {/* CTA Banner */}
-        <div className="mt-12 text-center">
-          <a
-            href="#consultation"
-            className="btn-primary-cta text-base sm:text-lg"
-          >
-            Book Your Consultation →
-          </a>
-          <div className="mt-3 text-xs sm:text-sm font-medium text-emerald-200/80 flex items-center justify-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Real diagnosis · Personalised treatment plan · No unnecessary surgery-first approach</span>
-          </div>
-        </div>
-
       </div>
+
+      <style>{`
+        @media (min-width: 900px) {
+          .doctor-grid {
+            grid-template-columns: 1fr 1.4fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -1,32 +1,34 @@
 import React from 'react';
+import OfferBanner from '@/components/OfferBanner';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import ProblemAgitation from '@/components/ProblemAgitation';
-import ConsultationDeliverables from '@/components/ConsultationDeliverables';
-import FourStepFramework from '@/components/FourStepFramework';
-import ConditionsGrid from '@/components/ConditionsGrid';
+import TrustCounters from '@/components/TrustCounters';
+import PainSection from '@/components/PainSection';
+import ConsultationSection from '@/components/ConsultationSection';
+import ProcessSteps from '@/components/ProcessSteps';
+import PersonaCards from '@/components/PersonaCards';
 import DoctorBio from '@/components/DoctorBio';
 import Testimonials from '@/components/Testimonials';
-import BookingForm from '@/components/BookingForm';
 import FaqSection from '@/components/FaqSection';
+import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
-import StickyMobileBar from '@/components/StickyMobileBar';
 
 export default function ReliefPhysioPage() {
   return (
-    <main className="min-h-[100dvh] w-full overflow-x-hidden flex flex-col bg-[#F8FAFC]">
+    <main>
+      <OfferBanner />
       <Navbar />
       <HeroSection />
-      <ProblemAgitation />
-      <ConsultationDeliverables />
-      <FourStepFramework />
-      <ConditionsGrid />
+      <TrustCounters />
+      <PainSection />
+      <ConsultationSection />
+      <ProcessSteps />
+      <PersonaCards />
       <DoctorBio />
       <Testimonials />
-      <BookingForm />
       <FaqSection />
+      <FinalCTA />
       <Footer />
-      <StickyMobileBar />
     </main>
   );
 }
