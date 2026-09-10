@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { X, MapPin, Video } from 'lucide-react';
+import { X, MapPin } from 'lucide-react';
 
 export default function OfferBanner() {
   const [visible, setVisible] = useState(true);
@@ -12,27 +12,37 @@ export default function OfferBanner() {
       style={{
         background: 'linear-gradient(90deg, #00695C 0%, #00897B 50%, #00695C 100%)',
         color: '#fff',
-        padding: '10px 20px',
+        padding: '7px 12px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '12px',
+        gap: '8px',
         position: 'relative',
-        fontSize: '0.85rem',
+        fontSize: 'clamp(0.68rem, 2.5vw, 0.82rem)',
         fontWeight: 600,
         letterSpacing: '0.01em',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        width: '100%',
+        boxSizing: 'border-box',
       }}
     >
-      <span style={{ display: 'flex', alignItems: 'center', gap: '6px', opacity: 0.9 }}>
-        <MapPin size={14} style={{ flexShrink: 0 }} />
-        <span>In-Clinic: Mayur Vihar, Delhi</span>
-      </span>
-      <span style={{ opacity: 0.5 }}>·</span>
-      <span style={{ display: 'flex', alignItems: 'center', gap: '6px', opacity: 0.9 }}>
-        <Video size={14} style={{ flexShrink: 0 }} />
-        <span>Online Consultations — Pan-India</span>
-      </span>
-      <span style={{ opacity: 0.5, display: 'none' }} className="md-show">·</span>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '5px',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+        }}
+      >
+        <MapPin size={13} style={{ flexShrink: 0 }} />
+        <span style={{ whiteSpace: 'nowrap' }}>
+          In-Clinic in Mayur Vihar, Delhi · Also Available Online, Pan-India
+        </span>
+      </div>
+
       <a
         href="#book"
         style={{
@@ -40,11 +50,13 @@ export default function OfferBanner() {
           border: '1px solid rgba(255,255,255,0.35)',
           color: '#fff',
           borderRadius: '999px',
-          padding: '4px 14px',
-          fontSize: '0.78rem',
+          padding: '2px 10px',
+          fontSize: '0.72rem',
           fontWeight: 700,
           cursor: 'pointer',
           textDecoration: 'none',
+          whiteSpace: 'nowrap',
+          flexShrink: 0,
           transition: 'background 0.2s',
         }}
         onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.28)')}
@@ -52,24 +64,22 @@ export default function OfferBanner() {
       >
         Book Now
       </a>
+
       <button
         onClick={() => setVisible(false)}
         aria-label="Dismiss banner"
         style={{
-          position: 'absolute',
-          right: '12px',
-          top: '50%',
-          transform: 'translateY(-50%)',
           background: 'none',
           border: 'none',
           color: 'rgba(255,255,255,0.7)',
           cursor: 'pointer',
-          padding: '4px',
+          padding: '2px',
           display: 'flex',
           alignItems: 'center',
+          flexShrink: 0,
         }}
       >
-        <X size={15} />
+        <X size={14} />
       </button>
     </div>
   );
