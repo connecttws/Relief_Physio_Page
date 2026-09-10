@@ -51,13 +51,13 @@ export default function ProcessSteps() {
       id="process"
       style={{
         background: '#fff',
-        paddingBlock: 'clamp(64px, 10vw, 96px)',
-        paddingInline: '24px',
+        paddingBlock: 'clamp(32px, 6vw, 88px)',
+        paddingInline: '16px',
       }}
     >
       <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
         {/* Header */}
-        <div style={{ marginBottom: '56px', textAlign: 'center' }}>
+        <div style={{ marginBottom: 'clamp(24px, 4vw, 52px)', textAlign: 'center' }}>
           <p className="eyebrow" style={{ marginBottom: '12px' }}>
             The Treatment Process
           </p>

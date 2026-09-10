@@ -34,8 +34,8 @@ export default function TrustCounters() {
     <section
       style={{
         background: '#fff',
-        paddingBlock: '48px',
-        paddingInline: '24px',
+        paddingBlock: 'clamp(20px, 4vw, 44px)',
+        paddingInline: '16px',
         borderTop: '1px solid #F1F5F9',
         borderBottom: '1px solid #F1F5F9',
       }}
@@ -46,7 +46,7 @@ export default function TrustCounters() {
           margin: '0 auto',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '24px',
+          gap: 'clamp(12px, 3vw, 24px)',
         }}
       >
         {STATS.map(stat => {

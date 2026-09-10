@@ -47,13 +47,13 @@ export default function PersonaCards() {
       id="who"
       style={{
         background: '#F7F9FC',
-        paddingBlock: 'clamp(64px, 10vw, 96px)',
-        paddingInline: '24px',
+        paddingBlock: 'clamp(32px, 6vw, 88px)',
+        paddingInline: '16px',
       }}
     >
       <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
         {/* Header */}
-        <div style={{ marginBottom: '48px', textAlign: 'center' }}>
+        <div style={{ marginBottom: 'clamp(20px, 4vw, 44px)', textAlign: 'center' }}>
           <p className="eyebrow" style={{ marginBottom: '12px' }}>
             Who This Is For
           </p>

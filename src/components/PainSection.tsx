@@ -15,8 +15,8 @@ export default function PainSection() {
       id="pain"
       style={{
         background: 'linear-gradient(160deg, #0B1F3A 0%, #0D2B4A 60%, #113355 100%)',
-        paddingBlock: 'clamp(64px, 10vw, 96px)',
-        paddingInline: '24px',
+        paddingBlock: 'clamp(32px, 6vw, 88px)',
+        paddingInline: '16px',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -45,7 +45,7 @@ export default function PainSection() {
         }}
       >
         {/* Header */}
-        <div style={{ marginBottom: '48px' }}>
+        <div style={{ marginBottom: 'clamp(20px, 4vw, 44px)' }}>
           <div
             className="badge"
             style={{

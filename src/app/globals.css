@@ -360,11 +360,31 @@ img {
 ───────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   :root {
-    --section-py: 56px;
-    --section-px: 20px;
+    --section-py: 32px;
+    --section-px: 16px;
+  }
+
+  .section {
+    padding-block: 32px !important;
   }
 
   .section-title {
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+  }
+
+  .container {
+    padding-inline: 16px;
+  }
+
+  .eyebrow {
+    margin-bottom: 6px !important;
+  }
+
+  /* Tighten first & last elements in mobile sections */
+  section > div > *:first-child {
+    margin-top: 0 !important;
+  }
+  section > div > *:last-child {
+    margin-bottom: 0 !important;
   }
 }

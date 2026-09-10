@@ -25,8 +25,8 @@ export default function DoctorBio() {
       id="doctor"
       style={{
         background: '#fff',
-        paddingBlock: 'clamp(64px, 10vw, 96px)',
-        paddingInline: '24px',
+        paddingBlock: 'clamp(32px, 6vw, 88px)',
+        paddingInline: '16px',
       }}
     >
       <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
@@ -35,7 +35,7 @@ export default function DoctorBio() {
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr',
-            gap: '52px',
+            gap: 'clamp(24px, 5vw, 52px)',
             alignItems: 'center',
           }}
           className="doctor-grid"

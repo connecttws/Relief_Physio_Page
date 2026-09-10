@@ -8,8 +8,8 @@ export default function FinalCTA() {
       id="book"
       style={{
         background: 'linear-gradient(160deg, #00695C 0%, #00897B 50%, #00695C 100%)',
-        paddingBlock: 'clamp(72px, 12vw, 110px)',
-        paddingInline: '24px',
+        paddingBlock: 'clamp(36px, 8vw, 100px)',
+        paddingInline: '16px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
@@ -36,7 +36,7 @@ export default function FinalCTA() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '28px',
+          gap: 'clamp(16px, 4vw, 28px)',
         }}
       >
         {/* Eyebrow */}

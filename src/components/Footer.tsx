@@ -8,8 +8,8 @@ export default function Footer() {
       style={{
         background: '#0B1F3A',
         color: 'rgba(255,255,255,0.75)',
-        paddingBlock: 'clamp(40px, 6vw, 64px)',
-        paddingInline: '24px',
+        paddingBlock: 'clamp(24px, 5vw, 56px)',
+        paddingInline: '16px',
       }}
     >
       <div
@@ -18,7 +18,7 @@ export default function Footer() {
           margin: '0 auto',
           display: 'grid',
           gridTemplateColumns: '1fr',
-          gap: '40px',
+          gap: 'clamp(20px, 4vw, 40px)',
         }}
         className="footer-grid"
       >
