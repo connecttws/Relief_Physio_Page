@@ -278,19 +278,22 @@ export default function Footer() {
               </span>
             </a>
 
-            {/* Timings */}
+            {/* Working Hours */}
             <div
               style={{
                 display: 'flex',
                 alignItems: 'flex-start',
                 gap: '12px',
                 fontSize: '0.82rem',
-                color: 'rgba(255,255,255,0.55)',
+                color: 'rgba(255,255,255,0.72)',
                 lineHeight: 1.5,
               }}
             >
               <Clock size={16} style={{ flexShrink: 0, color: '#4DB6AC', marginTop: '2px' }} />
-              <span>Mon - Sat: 9:00 AM – 8:00 PM (Sunday By Appointment)</span>
+              <span>
+                <strong style={{ color: '#fff', display: 'block', marginBottom: '1px' }}>Working Hours:</strong>
+                Open 24 Hours
+              </span>
             </div>
           </div>
         </div>
