@@ -13,7 +13,7 @@ const FAQS = [
   },
   {
     q: 'How is the online consultation different from an in-clinic visit?',
-    a: 'Online consultations are done over video call — Dr. Rahul assesses your movement and pain pattern live and builds a home-based treatment plan. In-clinic visits add hands-on manual therapy where needed. Both are equally thorough in terms of diagnosis.',
+    a: 'Online consultations are done over video call — assessing your movement and pain pattern live to build a home-based treatment plan. In-clinic visits at Relief Physiotherapy (Mayur Vihar Phase 1, Delhi) add hands-on manual therapy where needed. Both are equally thorough in terms of diagnosis.',
   },
   {
     q: 'Do I need any equipment for an online session?',
@@ -21,7 +21,7 @@ const FAQS = [
   },
   {
     q: 'How do I book an appointment?',
-    a: 'Click any "Book Your Consultation" button on this page, choose clinic or online, and confirm your slot. You\'ll receive a confirmation via WhatsApp.',
+    a: 'Click any "Book Consultation" button, call us directly at 9675967575, or message us on WhatsApp. We will confirm your slot right away.',
   },
   {
     q: 'How many sessions will I need?',

@@ -45,30 +45,51 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <a href="#" style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
-          <span
+        <a
+          href="#"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            textDecoration: 'none',
+          }}
+        >
+          <img
+            src="/logo.png"
+            alt="Relief Physiotherapy"
             style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontWeight: 800,
-              fontSize: '1.15rem',
-              color: '#0B1F3A',
-              letterSpacing: '-0.03em',
+              height: '42px',
+              width: 'auto',
+              objectFit: 'contain',
+              flexShrink: 0,
             }}
-          >
-            Dr. Rahul
-          </span>
-          <span
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 500,
-              fontSize: '0.65rem',
-              color: '#00897B',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-            }}
-          >
-            Physiotherapy
-          </span>
+          />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
+            <span
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 800,
+                fontSize: '1.15rem',
+                color: '#0B1F3A',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.15,
+              }}
+            >
+              Relief Physiotherapy
+            </span>
+            <span
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 600,
+                fontSize: '0.62rem',
+                color: '#00897B',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+              }}
+            >
+              Mayur Vihar Phase 1, Delhi
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav Links */}
@@ -115,8 +136,9 @@ export default function Navbar() {
         {/* CTA */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
           <a
-            href="tel:+91"
-            aria-label="Call Dr. Rahul"
+            href="tel:+919675967575"
+            aria-label="Call Relief Physiotherapy"
+            title="Call +91 96759 67575"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -200,14 +222,34 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#book"
-            onClick={() => setMobileOpen(false)}
-            className="btn btn-cta"
-            style={{ width: '100%', marginTop: '16px', justifyContent: 'center' }}
-          >
-            Book Consultation
-          </a>
+          <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <a
+              href="tel:+919675967575"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                padding: '10px',
+                borderRadius: '8px',
+                background: '#E0F2F1',
+                color: '#00897B',
+                fontWeight: 700,
+                fontSize: '0.9rem',
+                textDecoration: 'none',
+              }}
+            >
+              <Phone size={16} /> Call +91 96759 67575
+            </a>
+            <a
+              href="#book"
+              onClick={() => setMobileOpen(false)}
+              className="btn btn-cta"
+              style={{ width: '100%', justifyContent: 'center' }}
+            >
+              Book Consultation
+            </a>
+          </div>
         </div>
       )}
 

@@ -39,7 +39,7 @@ export default function OfferBanner() {
       >
         <MapPin size={13} style={{ flexShrink: 0 }} />
         <span style={{ whiteSpace: 'nowrap' }}>
-          In-Clinic in Mayur Vihar, Delhi · Also Available Online, Pan-India
+          Relief Physiotherapy · In-Clinic at Mayur Vihar Phase 1, Delhi · Online Pan-India
         </span>
       </div>
 

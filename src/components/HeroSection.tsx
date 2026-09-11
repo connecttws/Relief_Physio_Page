@@ -101,12 +101,12 @@ export default function HeroSection() {
             marginInline: 'auto',
           }}
         >
-          Get a personalised assessment from{' '}
-          <strong style={{ color: '#1E293B', fontWeight: 600 }}>Dr. Rahul</strong>,
-          a qualified physiotherapist —{' '}
+          Get a personalised assessment at{' '}
+          <strong style={{ color: '#1E293B', fontWeight: 600 }}>Relief Physiotherapy</strong>{' '}
+          with Dr. Rahul —{' '}
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: 500 }}>
             <MapPin size={14} style={{ color: '#00897B', flexShrink: 0 }} />
-            In-clinic in Mayur Vihar, Delhi
+            In-clinic at Mayur Vihar Phase 1, Delhi
           </span>{' '}
           or{' '}
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: 500 }}>

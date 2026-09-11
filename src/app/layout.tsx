@@ -17,23 +17,27 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Rahul | Physiotherapy for Spine, Knee & Neck Pain — Mayur Vihar, Delhi & Online",
+  title: "Relief Physiotherapy | Clinic for Spine, Knee & Neck Pain — Mayur Vihar Phase 1, Delhi",
   description:
-    "Get a personalised physiotherapy assessment from Dr. Rahul — 12+ years, 10,000+ patients treated. In-clinic in Mayur Vihar, Delhi or online Pan-India. Real diagnosis, no guesswork.",
+    "Evidence-based physiotherapy at Relief Physiotherapy. In-clinic at B-4, Acharya Niketan, Mayur Vihar Phase 1, Behind Bansal Sweets, Delhi - 110091 & online pan-India. Call 9675967575.",
   keywords: [
-    "physiotherapist Mayur Vihar",
-    "physiotherapy Delhi",
-    "spine pain treatment",
+    "Relief Physiotherapy",
+    "physiotherapist Mayur Vihar Phase 1",
+    "Acharya Niketan physiotherapy",
+    "physiotherapy Delhi 110091",
+    "spine pain treatment Delhi",
     "knee pain physiotherapy",
-    "neck pain relief",
+    "neck pain relief Mayur Vihar",
     "online physiotherapy India",
-    "Dr Rahul physiotherapist",
     "back pain specialist Delhi",
   ],
+  icons: {
+    icon: "/logo.png",
+  },
   openGraph: {
-    title: "Dr. Rahul | Physiotherapy — Spine, Knee & Neck Pain",
+    title: "Relief Physiotherapy — Spine, Knee & Neck Pain Clinic",
     description:
-      "Personalised physiotherapy in Mayur Vihar, Delhi & online. 10,000+ patients treated. Book your consultation today.",
+      "Evidence-based physiotherapy at B-4, Acharya Niketan, Mayur Vihar Phase 1, Delhi & online. Call +91 96759 67575.",
     type: "website",
   },
 };

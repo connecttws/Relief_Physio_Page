@@ -5,7 +5,7 @@ import { CheckCircle2, GraduationCap, MapPin, Users, ArrowRight, Star } from 'lu
 const CREDENTIALS = [
   { icon: GraduationCap, label: 'Qualified Physiotherapist (BPT/MPT)', color: '#00897B', bg: '#E0F2F1' },
   { icon: Users, label: '10,000+ Patients Treated Successfully', color: '#E05A2B', bg: '#FFF3EE' },
-  { icon: MapPin, label: 'Clinic: Mayur Vihar, Delhi & Online Pan-India', color: '#7C3AED', bg: '#F3EDFF' },
+  { icon: MapPin, label: 'Relief Physiotherapy · Mayur Vihar Phase 1, Delhi & Online', color: '#7C3AED', bg: '#F3EDFF' },
 ];
 
 const SPECIALISATIONS = [
@@ -102,7 +102,7 @@ export default function DoctorBio() {
               <strong style={{ color:'#1E293B',fontWeight:600 }}>12 years of clinical experience</strong>{' '}
               treating spine, neck and knee pain. He has helped{' '}
               <strong style={{ color:'#1E293B',fontWeight:600 }}>10,000+ patients</strong>{' '}
-              recover from chronic musculoskeletal conditions through personalised, evidence-based physiotherapy — both in-clinic at Mayur Vihar, Delhi and online across India.
+              recover from chronic musculoskeletal conditions through personalised, evidence-based physiotherapy — both in-clinic at Relief Physiotherapy (B-4, Acharya Niketan, Mayur Vihar Phase 1, Delhi) and online across India.
             </p>
 
             {/* Credentials */}
