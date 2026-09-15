@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { CheckCircle2, MapPin, Laptop, Play } from 'lucide-react';
+import { CheckCircle2, MapPin, Laptop } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -64,16 +64,16 @@ export default function HeroSection() {
           style={{
             fontFamily: "'Outfit', sans-serif",
             fontWeight: 800,
-            fontSize: 'clamp(1.75rem, 6vw, 3.2rem)',
+            fontSize: 'clamp(1.25rem, 4.2vw, 3rem)',
             color: '#0B1F3A',
-            letterSpacing: '-0.03em',
-            lineHeight: 1.2,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.22,
             maxWidth: '780px',
             textAlign: 'center',
           }}
         >
           Overcome Spine, Knee &amp; Neck Pain
-          <span style={{ display: 'block', marginTop: '8px' }}>
+          <span style={{ display: 'block', marginTop: '6px' }}>
             With{' '}
             <span
               style={{
@@ -93,9 +93,9 @@ export default function HeroSection() {
         {/* Subheadline */}
         <p
           style={{
-            fontSize: '1.02rem',
+            fontSize: 'clamp(0.84rem, 1.9vw, 0.96rem)',
             color: '#475569',
-            lineHeight: 1.7,
+            lineHeight: 1.6,
             maxWidth: '640px',
             fontWeight: 400,
             marginInline: 'auto',
@@ -116,62 +116,37 @@ export default function HeroSection() {
           .
         </p>
 
-        {/* VSL Video Frame Placeholder */}
+        {/* VSL Video Frame */}
         <div
           style={{
             position: 'relative',
-            borderRadius: '20px',
+            borderRadius: '16px',
             overflow: 'hidden',
-            boxShadow: '0 20px 50px rgba(11,31,58,0.15)',
+            boxShadow: '0 16px 45px rgba(11,31,58,0.14)',
             aspectRatio: '16/9',
-            background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-            border: '4px solid #FFFFFF',
+            background: '#0B1F3A',
+            border: '3px solid #FFFFFF',
             width: '100%',
+            maxWidth: '780px',
             marginBlock: '6px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
           className="vsl-video-frame"
         >
-          <div
+          <iframe
+            src="https://fast.wistia.net/embed/iframe/87lbd2qoja?seo=false&videoFoam=true"
+            title="Relief Physiotherapy Overview Video"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full border-0"
             style={{
               position: 'absolute',
-              inset: 0,
-              background: 'radial-gradient(circle at center, rgba(0,137,123,0.2) 0%, transparent 70%)',
-              pointerEvents: 'none',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              border: 0,
             }}
           />
-
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '12px',
-              zIndex: 2,
-            }}
-          >
-            <div
-              style={{
-                width: '64px',
-                height: '64px',
-                borderRadius: '50%',
-                background: '#00897B',
-                color: '#FFFFFF',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 10px 30px rgba(0,137,123,0.4)',
-                paddingLeft: '4px',
-              }}
-            >
-              <Play size={28} fill="#FFFFFF" />
-            </div>
-            <span style={{ color: '#FFFFFF', fontWeight: 600, fontSize: '0.9rem', letterSpacing: '0.02em' }}>
-              Watch Overview Video
-            </span>
-          </div>
         </div>
 
         {/* CTA Block */}
