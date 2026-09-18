@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import {
   CheckCircle2,
   Phone,
@@ -13,6 +14,13 @@ import {
 } from 'lucide-react';
 
 export default function ThankYouPage() {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq) {
+      (window as unknown as { fbq: (...args: unknown[]) => void }).fbq('track', 'PageView');
+      (window as unknown as { fbq: (...args: unknown[]) => void }).fbq('track', 'Lead');
+    }
+  }, []);
+
   return (
     <div
       style={{
@@ -22,6 +30,19 @@ export default function ThankYouPage() {
         background: 'linear-gradient(180deg, #F0FDF4 0%, #FFFFFF 60%, #F7F9FC 100%)',
       }}
     >
+      {/* Meta Pixel Lead Event Script */}
+      <Script
+        id="meta-pixel-thank-you-lead"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            if (typeof window.fbq === 'function') {
+              fbq('track', 'PageView');
+              fbq('track', 'Lead');
+            }
+          `,
+        }}
+      />
       {/* Header Bar */}
       <header
         style={{
