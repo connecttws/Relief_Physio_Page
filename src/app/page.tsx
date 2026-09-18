@@ -9,6 +9,7 @@ import ProcessSteps from '@/components/ProcessSteps';
 import PersonaCards from '@/components/PersonaCards';
 import DoctorBio from '@/components/DoctorBio';
 import Testimonials from '@/components/Testimonials';
+import BookingFormSection from '@/components/BookingFormSection';
 import FaqSection from '@/components/FaqSection';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
@@ -51,6 +52,8 @@ export default function ReliefPhysioPage() {
       <Divider />
       <Testimonials />
       <Divider dark />
+      <BookingFormSection />
+      <Divider />
       <FaqSection />
       <Divider />
       <FinalCTA />

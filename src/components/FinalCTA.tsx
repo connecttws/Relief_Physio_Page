@@ -5,7 +5,7 @@ import { CheckCircle2, MapPin, Laptop, Phone } from 'lucide-react';
 export default function FinalCTA() {
   return (
     <section
-      id="book"
+      id="final-contact"
       style={{
         background: 'linear-gradient(160deg, #00695C 0%, #00897B 50%, #00695C 100%)',
         paddingBlock: 'clamp(36px, 8vw, 100px)',

@@ -39,7 +39,8 @@ export default function DoctorBio() {
               style={{
                 background:'linear-gradient(145deg,#00897B 0%,#004D40 100%)',
                 borderRadius:'28px',
-                minHeight:'420px',
+                height:'clamp(420px, 52vw, 540px)',
+                width:'100%',
                 display:'flex',
                 alignItems:'center',
                 justifyContent:'center',
@@ -48,39 +49,67 @@ export default function DoctorBio() {
                 boxShadow:'0 24px 60px rgba(0,137,123,0.22)',
               }}
             >
-              {/* Pattern overlay */}
-              <div aria-hidden style={{ position:'absolute',inset:0,backgroundImage:`radial-gradient(circle at 70% 30%, rgba(255,255,255,0.06) 0%, transparent 50%), radial-gradient(circle at 30% 70%, rgba(0,0,0,0.10) 0%, transparent 50%)`,pointerEvents:'none' }} />
+              {/* Doctor Real Image */}
+              <img
+                src="/rahul.png"
+                alt="Dr. Rahul - Senior Physiotherapist"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'top center',
+                  display: 'block',
+                }}
+              />
 
-              {/* Avatar circle */}
-              <div style={{ width:'180px',height:'180px',borderRadius:'50%',background:'rgba(255,255,255,0.12)',border:'3px solid rgba(255,255,255,0.20)',display:'flex',alignItems:'center',justifyContent:'center',backdropFilter:'blur(4px)' }}>
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-              </div>
+              {/* Bottom gradient overlay for readability */}
+              <div
+                aria-hidden
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(11,31,58,0.85) 0%, rgba(11,31,58,0.2) 32%, transparent 58%)',
+                  pointerEvents: 'none',
+                }}
+              />
 
               {/* Floating name card — bottom */}
-              <div style={{ position:'absolute',bottom:0,left:0,right:0,background:'rgba(0,0,0,0.55)',backdropFilter:'blur(12px)',padding:'16px 24px',display:'flex',alignItems:'center',justifyContent:'space-between' }}>
+              <div
+                style={{
+                  position:'absolute',
+                  bottom:0,
+                  left:0,
+                  right:0,
+                  background:'rgba(11,31,58,0.68)',
+                  backdropFilter:'blur(12px)',
+                  WebkitBackdropFilter:'blur(12px)',
+                  padding:'16px 22px',
+                  display:'flex',
+                  alignItems:'center',
+                  justifyContent:'space-between',
+                  borderTop:'1px solid rgba(255,255,255,0.14)',
+                }}
+              >
                 <div>
-                  <div style={{ fontFamily:"'Outfit',sans-serif",fontWeight:800,fontSize:'1.1rem',color:'#fff' }}>Dr. Rahul</div>
-                  <div style={{ fontSize:'0.75rem',color:'rgba(255,255,255,0.60)',marginTop:'2px' }}>Physiotherapist</div>
+                  <div style={{ fontFamily:"'Outfit',sans-serif",fontWeight:800,fontSize:'1.15rem',color:'#fff' }}>Dr. Rahul</div>
+                  <div style={{ fontSize:'0.75rem',color:'rgba(255,255,255,0.75)',marginTop:'2px' }}>Senior Physiotherapist (BPT, MPT)</div>
                 </div>
-                <div style={{ display:'flex',alignItems:'center',gap:'6px',background:'rgba(255,255,255,0.12)',border:'1px solid rgba(255,255,255,0.20)',borderRadius:'10px',padding:'8px 14px' }}>
+                <div style={{ display:'flex',alignItems:'center',gap:'6px',background:'rgba(255,255,255,0.14)',border:'1px solid rgba(255,255,255,0.22)',borderRadius:'10px',padding:'8px 12px' }}>
                   <Star size={13} style={{ color:'#F59E0B' }} fill="#F59E0B" />
-                  <span style={{ fontSize:'0.85rem',fontWeight:700,color:'#fff' }}>4.0</span>
+                  <span style={{ fontSize:'0.85rem',fontWeight:700,color:'#fff' }}>4.9</span>
                 </div>
               </div>
 
               {/* Experience badge — top right */}
-              <div style={{ position:'absolute',top:'20px',right:'20px',background:'#fff',borderRadius:'16px',padding:'12px 16px',textAlign:'center',boxShadow:'0 8px 24px rgba(0,0,0,0.15)',border:'1px solid rgba(255,255,255,0.8)' }}>
-                <div style={{ fontFamily:"'Outfit',sans-serif",fontWeight:900,fontSize:'1.8rem',color:'#00897B',lineHeight:1 }}>12+</div>
-                <div style={{ fontSize:'0.68rem',color:'#64748B',fontWeight:600,marginTop:'3px',letterSpacing:'0.02em' }}>Years Exp.</div>
+              <div style={{ position:'absolute',top:'18px',right:'18px',background:'rgba(255,255,255,0.95)',backdropFilter:'blur(8px)',borderRadius:'16px',padding:'10px 14px',textAlign:'center',boxShadow:'0 8px 24px rgba(0,0,0,0.18)',border:'1px solid rgba(255,255,255,0.9)',zIndex:2 }}>
+                <div style={{ fontFamily:"'Outfit',sans-serif",fontWeight:900,fontSize:'1.6rem',color:'#00897B',lineHeight:1 }}>12+</div>
+                <div style={{ fontSize:'0.65rem',color:'#64748B',fontWeight:700,marginTop:'2px',letterSpacing:'0.02em',textTransform:'uppercase' }}>Years Exp.</div>
               </div>
 
               {/* Patients badge — top left */}
-              <div style={{ position:'absolute',top:'20px',left:'20px',background:'#E05A2B',borderRadius:'14px',padding:'10px 14px',textAlign:'center',boxShadow:'0 6px 20px rgba(224,90,43,0.35)' }}>
-                <div style={{ fontFamily:"'Outfit',sans-serif",fontWeight:900,fontSize:'1.2rem',color:'#fff',lineHeight:1 }}>10K+</div>
-                <div style={{ fontSize:'0.65rem',color:'rgba(255,255,255,0.85)',fontWeight:600,marginTop:'2px' }}>Patients</div>
+              <div style={{ position:'absolute',top:'18px',left:'18px',background:'#E05A2B',borderRadius:'14px',padding:'10px 14px',textAlign:'center',boxShadow:'0 6px 20px rgba(224,90,43,0.38)',zIndex:2 }}>
+                <div style={{ fontFamily:"'Outfit',sans-serif",fontWeight:900,fontSize:'1.15rem',color:'#fff',lineHeight:1 }}>10K+</div>
+                <div style={{ fontSize:'0.62rem',color:'rgba(255,255,255,0.9)',fontWeight:700,marginTop:'2px',textTransform:'uppercase' }}>Patients</div>
               </div>
             </div>
           </div>
